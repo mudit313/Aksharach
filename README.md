@@ -24,10 +24,10 @@ Hindi Scrabble will be developed under the GNU-GPL license.Also anyone is free t
 
 ## Credits
 
-Chetna Warkade 140101016    c.warkade@iitg.ernet.in
-Chinangshuk Roy 140101017   chinangshuk@iitg.ernet.in
-Mudit Agrawal 140101042     mudit.agrawal@iitg.ernet.in
-Ritvik Rawat 140101059  ritvik@iitg.ernet.in
+Chetna Warkade-140101016   - c.warkade@iitg.ernet.in\n
+Chinangshuk Roy- 140101017  -chinangshuk@iitg.ernet.in\n
+Mudit Agrawal-140101042     -mudit.agrawal@iitg.ernet.in\n
+Ritvik Rawat- 140101059 - ritvik@iitg.ernet.in\n
 
 ]]></content>
     <tabTrigger>readme</tabTrigger>
