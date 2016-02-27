@@ -1,8 +1,32 @@
 ﻿<Properties>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Letters.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Letters.cs" Line="18" Column="30" />
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SceneChange.cs">
+    <Files>
+      <File FileName="Assets\Scripts\change_obj.cs" Line="4" Column="7" />
+      <File FileName="Assets\SceneChange.cs" Line="13" Column="1" />
+=======
+>>>>>>> f326ad24b7448f8fbe4d9a413bb4c9e3c31f8f5e
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sound_change.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\Sound_change.cs" Line="21" Column="3" />
+=======
+      <File FileName="Assets\Scripts\Quit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\drag.cs" Line="27" Column="5" />
+      <File FileName="Assets\Scripts\intersection.cs" Line="31" Column="3" />
+>>>>>>> 4e1aa8f51500fc97e9a4d948cf51ba186f6e9506
+>>>>>>> c726eec98445474454f60ef72cd0ff7f8ac87d67
+>>>>>>> f326ad24b7448f8fbe4d9a413bb4c9e3c31f8f5e
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
