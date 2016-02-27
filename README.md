@@ -1,34 +1,73 @@
-<snippet>
-    <content>
-# Hindi Scrabble
+# *_Hindi Scrabble_*  
+   ______
+   
 
-This software is being developed as a part of CS243 Software Engineering Lab, by a group of students from the Department of Computer Science and Engineering of Indian Institute of Technology,Guwahati(IITG)
+   
+   **_Hindi Scrabble_** is a cross-platform board-simulation game developed majorly in Unity with scripts in C#.
 
-This software is the 2-D implementation of the board game-Scrabble in Hindi.There are several online word games which include scrabble as well. However,very few of these games are in Indian languages. Our software tackles the complexities of the Hindi language through this interactive word game.
+   
+   
+   
+   ---
+   
+# Features
 
-## Dependencies
+   - Vs CPU available
+   - Vs player available
+   - Various Difficulty levels
+   - 2D Graphics
+   - Hindi word-bank integrated with the game
+   - Storing of High Score
+   - Save Game
+   - Statistical alphabet-point allocation to reward better words
+   - Runs in OS X, Linux, and Windows 8.1 and above
+   
+   ---
+   
+# License
+   
+   Hindi Scrabble source code is licensed under GNU-GPL License.
+   
+   (http://www.gnu.org/licenses/gpl-3.0.en.html)
+   
 
-Unity Software
-Monodevelop
-OS: Windows XP SP2+, Mac OS X 10.8+, Ubuntu 12.04+, SteamOS+
-Graphics card: DX9 (shader model 2.0) capabilities; generally everything made since 2004 should work.
-CPU: SSE2 instruction set support.
+   All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
+   ---
+# Playing
 
-##Installation
+## Modes
+ 
+   The game is available in vs CPU (single player) and vs Player (multi player mode)
+   
+   Variable level of difficulty depending on number of entries accesible from the database. 
+   
+## Controls  
+   The game is mouse based and GUI is based on clicking the buttons. There are options to:
+   PLAY
+   EXCHANGE
+   SKIP
+   RESIGN
+   DICTIONARY
+   RECALL
+   
 
-The project is not complete yet.When it will be finished its *.exe file will be available for installation.
+   ---
+     
+     
+# Dependencies
 
-## License
+   Unity Software Monodevelop OS: Windows XP SP2+, Mac OS X 10.8+, Ubuntu 12.04+, SteamOS+ Graphics card: DX9 (shader model 2.0) capabilities; generally everything made since 2004 should work. CPU: SSE2 instruction set support.
 
-Hindi Scrabble will be developed under the GNU-GPL license.Also anyone is free to share and change the code as it is an Open Source Project.
+---
+# Installation 
+    
+The project is not complete yet. When it will be finished *.exe or *.app file will be made available.
 
-## Credits
+---
 
-Chetna Warkade-140101016   - c.warkade@iitg.ernet.in,
-Chinangshuk Roy- 140101017  -chinangshuk@iitg.ernet.in,
-Mudit Agrawal-140101042     -mudit.agrawal@iitg.ernet.in,
-Ritvik Rawat- 140101059 - ritvik@iitg.ernet.in
-
-]]></content>
-    <tabTrigger>readme</tabTrigger>
-</snippet>
+# Members  
+###   -  Ritvik Rawat           `ritvik@iitg.ernet.in`
+###   -  Mudit Agrawal          `mudit.agrawal@iitg.ernet.in`
+###   -  Chinangshuk Roy        `chinangshuk@iitg.ernet.in`
+###   -  Chetna Warkade         `c.warkade@iitg.ernet.in`
+   
