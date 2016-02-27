@@ -49,6 +49,7 @@
      <Compile Include="Assets\NewBehaviourScript.cs" />
      <Compile Include="Assets\SceneChange.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
+     <Compile Include="Assets\Scripts\Sound_change.cs" />
      <Compile Include="Assets\Scripts\change_obj.cs" />
      <Compile Include="Assets\Scripts\drag.cs" />
      <Compile Include="Assets\Scripts\intersection.cs" />
