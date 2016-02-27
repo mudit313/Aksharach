@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}</ProjectGuid>
+	<ProjectGuid>{34A00DDB-F434-69A3-AE2D-A09AB37BF083}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,16 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SceneChange.cs" />
-     <Compile Include="Assets\Scripts\Chance.cs" />
-     <Compile Include="Assets\Scripts\Letters.cs" />
-     <Compile Include="Assets\Scripts\Quit.cs" />
-     <Compile Include="Assets\Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\Sound_change.cs" />
-     <Compile Include="Assets\Scripts\change_obj.cs" />
-     <Compile Include="Assets\Scripts\drag.cs" />
-     <Compile Include="Assets\Scripts\intersection.cs" />
-     <Compile Include="Assets\Scripts\place.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

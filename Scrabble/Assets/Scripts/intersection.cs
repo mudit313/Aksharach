@@ -17,7 +17,9 @@ public class intersection : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
-		b = false;
+		if (other.gameObject.tag == "vowel") {
+			b=false;
+		}
 	}
 	void Update()
 	{
