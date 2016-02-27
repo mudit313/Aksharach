@@ -1,6 +1,6 @@
 <snippet>
-    <content>[
-# 1:Hindi Scrabble
+    <content>
+# Hindi Scrabble
 
 This software is being developed as a part of CS243 Software Engineering Lab, by a group of students from the Department of Computer Science and Engineering of Indian Institute of Technology,Guwahati(IITG)
 
