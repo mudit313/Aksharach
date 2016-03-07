@@ -29,8 +29,8 @@
    Hindi Scrabble source code is licensed under GNU-GPL License.
    
    (http://www.gnu.org/licenses/gpl-3.0.en.html)
-   (https://www.google.co.in/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Devanagari_consonants.svg/2000px-Devanagari_consonants.svg.png&imgrefurl=https://id.wikipedia.org/wiki/Aksara_Dewanagari&h=1064&w=2000&tbnid=RaQfEJqDhJBFpM:&docid=JwowVHaLisLqFM&ei=dW3dVv-QFpCSuATKqqigBA&tbm=isch&ved=0ahUKEwi_n9C7w67LAhUQCY4KHUoVCkQQMwhZKDIwMg)
-    (http://freepsdfiles.net/)
+   
+
    All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
    ---
 # Playing
@@ -57,6 +57,11 @@
 # Dependencies
 
    Unity Software Monodevelop OS: Windows XP SP2+, Mac OS X 10.8+, Ubuntu 12.04+, SteamOS+ Graphics card: DX9 (shader model 2.0) capabilities; generally everything made since 2004 should work. CPU: SSE2 instruction set support.
+
+- [Play Icons:Terms] (http://icons.mysitemyway.com/terms-of-use/)
+- (http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/)
+- (http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/)
+- 
 
 ---
 # Installation 
