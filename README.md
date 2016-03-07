@@ -27,13 +27,11 @@
 # License
    
    Hindi Scrabble source code is licensed under GNU-GPL License.
-
-   All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
-   Files are taken from these sites:
-      (http://www.gnu.org/licenses/gpl-3.0.en.html)
    
-      (http://freepsdfiles.net/)
-   https://www.google.co.in/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwj4_s2cxK7LAhUFBY4KHV5wDakQjRwIBw&url=https%3A%2F%2Fpixabay.com%2Fen%2Fcrate-wood-box-archive-1143427%2F&psig=AFQjCNH2t9Ux3nBm0meNLwGda75MduX_DQ&ust=1457438646912624
+   (http://www.gnu.org/licenses/gpl-3.0.en.html)
+   (https://www.google.co.in/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Devanagari_consonants.svg/2000px-Devanagari_consonants.svg.png&imgrefurl=https://id.wikipedia.org/wiki/Aksara_Dewanagari&h=1064&w=2000&tbnid=RaQfEJqDhJBFpM:&docid=JwowVHaLisLqFM&ei=dW3dVv-QFpCSuATKqqigBA&tbm=isch&ved=0ahUKEwi_n9C7w67LAhUQCY4KHUoVCkQQMwhZKDIwMg)
+    (http://freepsdfiles.net/)
+   All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
    ---
 # Playing
 
