@@ -27,11 +27,12 @@
 # License
    
    Hindi Scrabble source code is licensed under GNU-GPL License.
-   
-   (http://www.gnu.org/licenses/gpl-3.0.en.html)
-   
 
    All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
+   Files are taken from these sites:
+      (http://www.gnu.org/licenses/gpl-3.0.en.html)
+   
+      (http://freepsdfiles.net/)
    ---
 # Playing
 
