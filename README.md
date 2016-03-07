@@ -27,12 +27,11 @@
 # License
    
    Hindi Scrabble source code is licensed under GNU-GPL License.
+   
+   (http://www.gnu.org/licenses/gpl-3.0.en.html)
+   (https://www.google.co.in/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Devanagari_consonants.svg/2000px-Devanagari_consonants.svg.png&imgrefurl=https://id.wikipedia.org/wiki/Aksara_Dewanagari&h=1064&w=2000&tbnid=RaQfEJqDhJBFpM:&docid=JwowVHaLisLqFM&ei=dW3dVv-QFpCSuATKqqigBA&tbm=isch&ved=0ahUKEwi_n9C7w67LAhUQCY4KHUoVCkQQMwhZKDIwMg)
 
    All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
-   Files are taken from these sites:
-      (http://www.gnu.org/licenses/gpl-3.0.en.html)
-   
-      (http://freepsdfiles.net/)
    ---
 # Playing
 
