@@ -58,10 +58,9 @@
 
    Unity Software Monodevelop OS: Windows XP SP2+, Mac OS X 10.8+, Ubuntu 12.04+, SteamOS+ Graphics card: DX9 (shader model 2.0) capabilities; generally everything made since 2004 should work. CPU: SSE2 instruction set support.
 
-- [Play Icons:Terms] (http://icons.mysitemyway.com/terms-of-use/)
-- (http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/)
-- (http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/)
-- 
+- [Play Icons: Terms] (http://icons.mysitemyway.com/terms-of-use/)
+- http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/
+- http://icons.mysitemyway.com/legacy-icon/002246-glossy-waxed-wood-icon-media-a-media22-arrow-forward1/
 
 ---
 # Installation 
