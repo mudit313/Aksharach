@@ -3,6 +3,7 @@ using System.Collections;
 
 public class place : MonoBehaviour {
 	public GameObject board;
+	public static bool y = false;
 	//private bool onboard=false;
 	//Vector3 bottom;
 	/*void OnTriggerEnter2D(Collider2D other)
@@ -22,7 +23,7 @@ public class place : MonoBehaviour {
 	}*/
 	void OnMouseUp()
 	{
-		Debug.Log ("hi");
+		//Debug.Log ("hi");
 		Vector3 boardpos = new Vector3(board.transform.position.x,board.transform.position.y,0);
 		float sizeBoard = (float)(boardpos.y+4.21);
 		float sizeTile = sizeBoard/16;
@@ -54,5 +55,6 @@ public class place : MonoBehaviour {
 			}
 		}		
 		transform.position = boardpos;
+		y = true;
 	}
 }

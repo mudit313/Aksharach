@@ -49,6 +49,7 @@
      <Compile Include="Assets\SceneChange.cs" />
      <Compile Include="Assets\Scripts\Chance.cs" />
      <Compile Include="Assets\Scripts\Letters.cs" />
+     <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Sound_change.cs" />
