@@ -11,7 +11,8 @@ public class Chance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (place.y) {
+		currlet = place.letteronboard;
+		if (place.y && currlet != null) {
 			//currsc = 5;
 			currsc = currlet.GetComponentInChildren<Point> ().pt;
 			Debug.Log(currsc);
