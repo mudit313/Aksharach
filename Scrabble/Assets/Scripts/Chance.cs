@@ -4,6 +4,8 @@ using System.Collections;
 public class Chance : MonoBehaviour {
 	public int chance,currsc;
 	public GameObject currlet;
+	public static GameObject letteronboard;
+	public static bool added = true;
 	// Use this for initialization
 	void Start () {
 		chance = 1;
@@ -11,25 +13,21 @@ public class Chance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		currlet = place.letteronboard;
-		if (place.y && currlet != null) {
-			//currsc = 5;
-			currsc = currlet.GetComponentInChildren<Point> ().pt;
+		if (!added && letteronboard != null) {
+			currsc += letteronboard.GetComponentInChildren<Point> ().pt;
 			Debug.Log(currsc);
+			added = true;
 		}
-		else
-			currsc = 0;
 	}
 
 	public void OnClick(){
 		if (chance == 1) {
 			chance = 2;
 			Score.Score1 += currsc;
-			place.y = false;
 		} else {
 			chance = 1;
 			Score.Score2 += currsc;
-			place.y = false;
 		}
+		currsc = 0;
 	}
 }
