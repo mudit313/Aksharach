@@ -3,6 +3,8 @@ using System.Collections;
 
 public class place : MonoBehaviour {
 	public GameObject board;
+	public static bool y = false;
+	public static GameObject letteronboard;
 	//private bool onboard=false;
 	//Vector3 bottom;
 	/*void OnTriggerEnter2D(Collider2D other)
@@ -20,16 +22,22 @@ public class place : MonoBehaviour {
 			onboard = false;
 		}
 	}*/
+
+	void Update(){
+		if (transform.position.y > -4.3 && transform.position.y < -4.1)
+			letteronboard = gameObject;
+	}
+
 	void OnMouseUp()
 	{
-		Debug.Log ("hi");
+		//Debug.Log ("hi");
 		Vector3 boardpos = new Vector3(board.transform.position.x,board.transform.position.y,0);
 		float sizeBoard = (float)(boardpos.y+4.21);
 		float sizeTile = sizeBoard/16;
 		boardpos.x += sizeTile;
 		boardpos.y += sizeTile;
 		Vector3 offset = new Vector3 (Mathf.Abs(transform.position.x - boardpos.x),Mathf.Abs(transform.position.y - boardpos.y), 0);
-		Debug.Log (transform.position.y);
+		//Debug.Log (transform.position.y);
 		while (offset.x>sizeTile) {
 			if (transform.position.x > boardpos.x) {
 				boardpos.x += 2 * sizeTile;
@@ -54,5 +62,6 @@ public class place : MonoBehaviour {
 			}
 		}		
 		transform.position = boardpos;
+		y = true;
 	}
 }

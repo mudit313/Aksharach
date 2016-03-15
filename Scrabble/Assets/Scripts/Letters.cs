@@ -45,4 +45,5 @@ public class Letters : MonoBehaviour {
 			//Vyanjancurr[i] = Vyanjan[temp];
 		}
 	}
+
 }
