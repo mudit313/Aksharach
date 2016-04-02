@@ -3,29 +3,18 @@ using System.Collections;
 
 public class place : MonoBehaviour {
 	public GameObject board;
-	public static bool y = false;
-	public static GameObject letteronboard;
-	//private bool onboard=false;
-	//Vector3 bottom;
-	/*void OnTriggerEnter2D(Collider2D other)
-	{
-		Debug.Log ("Hey");
-		if (other.gameObject.tag == "board") {
-			onboard=true;
-		}
-	}*/
-	// Update is called once per frame
-	/*void Update () {
-		if (onboard == true) {
-			bottom = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0);
-			Debug.Log("Bot");
-			onboard = false;
-		}
-	}*/
+	//public static int sc=0;
+	public bool onboard = false;
 
-	void Update(){
-		if (transform.position.y > -4.3 && transform.position.y < -4.1)
-			letteronboard = gameObject;
+	// Update is called once per frame
+	void Update () {
+		if (transform.position.y > -4.22 && !onboard) {
+			if(Chance.letteronboard != null)
+				Chance.xletter = Chance.letteronboard;
+			Chance.letteronboard = gameObject;
+			gameObject.GetComponent<place>().onboard = true;
+			Chance.added = false;
+		}
 	}
 
 	void OnMouseUp()
@@ -62,6 +51,5 @@ public class place : MonoBehaviour {
 			}
 		}		
 		transform.position = boardpos;
-		y = true;
 	}
 }
