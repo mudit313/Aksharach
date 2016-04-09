@@ -54,20 +54,22 @@ public class Chance : MonoBehaviour {
 				chance = 1;
 				Score.Score2 += currsc;
 			}
+			accepted=false;
 		}
 		currsc = 0;
 	}
 	public void ValidCheck()
 	{
-		Debug.Log ("checking");
+		//Debug.Log ("checking");
 		int i,flag=0;
-		int line1 = (int)getIndex (list [0]).x;
-		int line2 = (int)getIndex (list [0]).y;
+		Vector2 ind = getIndex (list [0]);
+		int line1 = (int)ind.x;
+		int line2 = (int)ind.y;
 		for (i=1; i<list.Count; i++) {
 			if((int)(getIndex (list [i]).x)!=line1)
 				break;
 		}
-		Debug.Log (list.Count);
+		//Debug.Log ();
 		if (i<list.Count) {
 			for(i=1;i<list.Count;i++)
 			{
@@ -76,59 +78,49 @@ public class Chance : MonoBehaviour {
 			}
 			flag=1;
 		}
+		//Debug.Log (i);
+		Debug.Log (flag);
 		if (flag == 1) {
-			line2=line1;
-			for(i=0;i<list.Count;i++)
+			line2=line1-1;
+			while(line1<16 && Board.matrix[line1,(int)ind.y]!=0)
 			{
-				Vector2 ind=Chance.getIndex(list[i]);
-				if((int)ind.x>line2)
-				{
-					for(int j=line2+1;j<=(int)ind.x;j++)
-					{
-						if(Board.matrix[j,(int)ind.y]==0)
-							return;
-						currsc+=Board.matrix[j,(int)ind.y];
-					}
-					line2=(int)ind.x;
-				}
-				else if((int)ind.x<line1)
-				{
-					for(int j=(int)ind.x;j<line1;j++)
-					{
-						if(Board.matrix[j,(int)ind.y]==0)
-							return;
-						currsc+=Board.matrix[j,(int)ind.y];
-					}
-					line1=(int)ind.x;
-				}
+				currsc+=Board.matrix[line1,(int)ind.y];
+				line1++;
+			}
+			line1--;
+			while(line2>=0 && Board.matrix[line2,(int)ind.y]!=0)
+			{
+				currsc+=Board.matrix[line2,(int)ind.y];
+				line2--;
+			}
+			line2++;
+			for (i=1; i<list.Count; i++) {
+				Vector2 ind1=getIndex (list [i]);
+				Debug.Log(ind1.x);
+				if((int)(ind1.x)>line1 || (int)(ind1.x)<line2)
+					return;
 			}
 		}
 		else{
-			line1=line2;
-			for(i=0;i<list.Count;i++)
+			line1=line2-1;
+			while(line2<16 && Board.matrix[(int)ind.x,line2]!=0)
 			{
-				Vector2 ind=Chance.getIndex(list[i]);
-				if((int)ind.y>line2)
-				{
-					for(int j=line2+1;j<=(int)ind.y;j++)
-					{
-						if(Board.matrix[(int)ind.x,j]==0)
-							return;
-						currsc+=Board.matrix[(int)ind.x,j];
-					}
-					line2=(int)ind.y;
-				}
-				else if((int)ind.y<line1)
-				{
-					for(int j=(int)ind.y;j<line1;j++)
-					{
-						if(Board.matrix[(int)ind.x,j]==0)
-							return;
-						currsc+=Board.matrix[(int)ind.x,j];
-					}
-					line1=(int)ind.y;
-				}
+				currsc+=Board.matrix[(int)ind.x,line2];
+				line2++;
+			}
+			line2--;
+			while(line1>=0 && Board.matrix[(int)ind.x,line1]!=0)
+			{
+				currsc+=Board.matrix[(int)ind.x,line1];
+				line1--;
+			}
+			line1++;
+			for (i=1; i<list.Count; i++) {
+				Vector2 ind1=getIndex (list [i]);
+				if((int)(ind1.y)>line2 || (int)(ind1.y)<line1)
+					return;
 			}
 		}
+		accepted = true;
 	}
 }
