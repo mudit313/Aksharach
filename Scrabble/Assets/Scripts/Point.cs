@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Point : MonoBehaviour {
 	public int pt;
+	public string Unicode;
 	// Use this for initialization
 	void Start () {
 
