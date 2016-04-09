@@ -48,13 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\SceneChange.cs" />
      <Compile Include="Assets\Scripts\Chance.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Convert.cs" />
      <Compile Include="Assets\Scripts\Dictionary.cs" />
      <Compile Include="Assets\Scripts\HindiUnicode.cs" />
-=======
      <Compile Include="Assets\Scripts\LangChng.cs" />
->>>>>>> 1632992c219b569ccdd73e36d957d9178ebde171
      <Compile Include="Assets\Scripts\Letters.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
