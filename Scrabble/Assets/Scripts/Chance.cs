@@ -8,6 +8,7 @@ public class Chance : MonoBehaviour {
 	public static GameObject letteronboard;
 	public static bool added=true;
 	public static bool accepted= false;
+	public static bool first=true;
 	public static List<GameObject> list=new List<GameObject>();
 	// Use this for initialization
 	void Start () {
@@ -55,6 +56,7 @@ public class Chance : MonoBehaviour {
 				Score.Score2 += currsc;
 			}
 			accepted=false;
+			first=false;
 		}
 		currsc = 0;
 	}
@@ -78,7 +80,20 @@ public class Chance : MonoBehaviour {
 			}
 			flag=1;
 		}
-		//Debug.Log (i);
+		if ((int)ind.x < 15 && Board.matrix [(int)(ind.x) + 1, (int)ind.y] != 0)
+			;
+		else if ((int)ind.x > 0 && Board.matrix [(int)(ind.x) - 1, (int)ind.y] != 0)
+			;
+		else if ((int)ind.y < 15 && Board.matrix [(int)ind.x, (int)(ind.y) + 1] != 0)
+			;
+		else if ((int)ind.y > 0 && Board.matrix [(int)ind.x, (int)(ind.y) - 1] != 0)
+			;
+		else {
+			if(!first)
+				return;
+			else if(list.Count>1)
+				return;
+		}
 		Debug.Log (flag);
 		if (flag == 1) {
 			line2=line1-1;
