@@ -27,8 +27,8 @@ public class intersection : MonoBehaviour {
 		{
 			Vector3 pos = transform.position;
 			Instantiate (x, pos, Quaternion.identity);
-			Destroy (col.gameObject);
-			Destroy (y);
+			col.gameObject.SetActive(false);
+			y.SetActive(false);
 		}
 	}
 }
