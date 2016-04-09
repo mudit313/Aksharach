@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 2cd915494d931f9478ffb8b849f1c0af
-timeCreated: 1458048456
+guid: fd0d4311e55e9ab4aafda400e52af6e7
+timeCreated: 1460194841
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dicfile: {fileID: 4900000, guid: e26ac10c09e663946a9e38793fbe4921, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
