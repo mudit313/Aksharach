@@ -3,12 +3,14 @@ using System.Collections;
 
 public class place : MonoBehaviour {
 	public GameObject board;
-	public static int sc=0;
+	//public static int sc=0;
 	public bool onboard = false;
 
 	// Update is called once per frame
 	void Update () {
 		if (transform.position.y > -4.22 && !onboard) {
+			if(Chance.letteronboard != null)
+				Chance.xletter = Chance.letteronboard;
 			Chance.letteronboard = gameObject;
 			gameObject.GetComponent<place>().onboard = true;
 			Chance.added = false;
