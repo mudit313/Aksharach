@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chance.cs">
     <Files>
@@ -10,6 +11,23 @@
       <File FileName="Assets\Scripts\Letters.cs" Line="29" Column="22" />
       <File FileName="Assets\Scripts\drag.cs" Line="20" Column="2" />
       <File FileName="Assets\Scripts\intersection.cs" Line="13" Column="41" />
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dict.txt">
+    <Files>
+      <File FileName="Assets\Scripts\Dictionary.cs" Line="25" Column="20" />
+      <File FileName="Assets\Scripts\Convert.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Dict.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HindiUnicode.cs" Line="15" Column="16" />
+      <File FileName="Assets\Scripts\Dictionary.txt" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LangChng.cs">
+    <Files>
+      <File FileName="Assets\Scripts\LangChng.cs" Line="42" Column="54" />
+>>>>>>> 1632992c219b569ccdd73e36d957d9178ebde171
+>>>>>>> bb9b12be7b27a58e1a203b15c46ec86f18d86386
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

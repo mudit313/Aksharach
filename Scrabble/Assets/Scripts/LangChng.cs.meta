@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Scrabble/Assets/Scripts/dictionary.cs.meta
+guid: fd0d4311e55e9ab4aafda400e52af6e7
+timeCreated: 1460194841
+=======
+guid: add2eec8df4d24c43927420d823201b8
+timeCreated: 1460262050
+>>>>>>> 1632992c219b569ccdd73e36d957d9178ebde171:Scrabble/Assets/Scripts/LangChng.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - dicfile: {fileID: 4900000, guid: e26ac10c09e663946a9e38793fbe4921, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -32,6 +32,20 @@
    
 
    All images file and tilesets, except where otherwise noted, are licensed under [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) 
+   
+   Music is under Creative Commons liscence of the [source website] (http://www.bensound.com/licensing)  
+   Song Track List
+   
+   
+   [TOMORROW](http://www.bensound.com/royalty-free-music/track/tomorrow): (http://www.bensound.com/royalty-free-music)
+   
+   
+   [UKULELE](http://www.bensound.com/royalty-free-music/track/ukulele): (http://www.bensound.com/royalty-free-music)
+   
+   
+   [MEMORIES](http://www.bensound.com/royalty-free-music/track/memories): (http://www.bensound.com/royalty-free-music)
+   
+   
    ---
 # Playing
 
