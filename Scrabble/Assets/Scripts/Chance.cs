@@ -1,60 +1,126 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Chance : MonoBehaviour {
-	public int chance,currsc;
+	public static int chance,currsc;
 	public Vector3 diff;
-	public static GameObject xletter;
 	public static GameObject letteronboard;
-	public static bool added = true;
+	public static bool added=true;
+	public static bool accepted= false;
+	public static List<GameObject> list=new List<GameObject>();
 	// Use this for initialization
 	void Start () {
 		chance = 1;
 	}
-	
-	// Update is called once per frame
+	public static Vector2 getIndex(GameObject g)
+	{
+		int x = (int)(8 + (g.transform.position.x - Board.boardpos.x) / (2 * Board.sizeTile));
+		int y = (int)(8 - (g.transform.position.y - Board.boardpos.y) / (2 * Board.sizeTile));
+		return new Vector2 (x, y);
+	}
+
 	void Update () {
 		if (!added && letteronboard != null) {
-		//if (letteronboard != null) {
-			//Debug.Log("Hi");
-			if(xletter != null)
-			{
-				//Debug.Log(xletter.name);
-				diff = letteronboard.transform.position - xletter.transform.position;
-				if(((0.49 < diff.x) && (diff.x < 0.5)) || ((-0.5 < diff.x) && (diff.x < -0.49)) || ((-0.5 < diff.y) && (diff.y < -0.49)) || ((0.49 < diff.y ) && (diff.y < 0.5))){
-					currsc += letteronboard.GetComponentInChildren<Point> ().pt;
-					added = true;
-					Debug.Log(currsc);
-					//Debug.Log("Hi");
-				}
-			}
-			else{
-				currsc += letteronboard.GetComponentInChildren<Point> ().pt;
-				added = true;
-				Debug.Log(currsc);
-			}
-		}
-		if (added && letteronboard != null && xletter != null) {
-			//Debug.Log("Hi");
-			diff = letteronboard.transform.position - xletter.transform.position;
-			if(((0.49 < diff.x) && (diff.x < 0.5)) || ((-0.5 < diff.x) && (diff.x < -0.49)) || ((-0.5 < diff.y) && (diff.y < -0.49)) || ((0.49 < diff.y ) && (diff.y < 0.5))){}
-			else{
-				currsc -= letteronboard.GetComponentInChildren<Point> ().pt;
-				added = false;
-				Debug.Log(currsc);
-				//Debug.Log("Hi");
-			}
+			Vector2 ind=getIndex(letteronboard);
+			Board.matrix[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().pt;
+			//Debug.Log(Board.matrix[(int)ind.x,(int)ind.y]);
+			//Debug.Log((int)ind.x);
+			//Debug.Log((int)ind.y);
+			/*if(ind.x<15 && Board.matrix[(ind.x)+1,ind.y]==0)
+				Board.matrix[(ind.x)+1,ind.y]=-1;
+			if(ind.x>0 && Board.matrix[(ind.x)-1,ind.y]==0)
+				Board.matrix[(ind.x)-1,ind.y]=-1;
+			if(ind.y<15 && Board.matrix[ind.x,(ind.y)+1]==0)
+				Board.matrix[ind.x,(ind.y)+1]=-1;
+			if(ind.y>0 && Board.matrix[ind.x,(ind.y)-1]==0)
+				Board.matrix[ind.x+1,ind.y]=-1;*/
+			added=true;
 		}
 	}
 
 	public void OnClick(){
-		if (chance == 1) {
-			chance = 2;
-			Score.Score1 += currsc;
-		} else {
-			chance = 1;
-			Score.Score2 += currsc;
+		ValidCheck ();
+		if (accepted) {
+			Debug.Log("accepted");
+			for(int i=0;i<list.Count;i++)
+				list[i].GetComponent<place>().placed=true;
+
+			list.Clear();
+			if (chance == 1) {
+				chance = 2;
+				Score.Score1 += currsc;
+			} else {
+				chance = 1;
+				Score.Score2 += currsc;
+			}
+			accepted=false;
 		}
 		currsc = 0;
+	}
+	public void ValidCheck()
+	{
+		//Debug.Log ("checking");
+		int i,flag=0;
+		Vector2 ind = getIndex (list [0]);
+		int line1 = (int)ind.x;
+		int line2 = (int)ind.y;
+		for (i=1; i<list.Count; i++) {
+			if((int)(getIndex (list [i]).x)!=line1)
+				break;
+		}
+		//Debug.Log ();
+		if (i<list.Count) {
+			for(i=1;i<list.Count;i++)
+			{
+				if((int)(getIndex(list[i]).y)!=line2)
+					return;
+			}
+			flag=1;
+		}
+		//Debug.Log (i);
+		Debug.Log (flag);
+		if (flag == 1) {
+			line2=line1-1;
+			while(line1<16 && Board.matrix[line1,(int)ind.y]!=0)
+			{
+				currsc+=Board.matrix[line1,(int)ind.y];
+				line1++;
+			}
+			line1--;
+			while(line2>=0 && Board.matrix[line2,(int)ind.y]!=0)
+			{
+				currsc+=Board.matrix[line2,(int)ind.y];
+				line2--;
+			}
+			line2++;
+			for (i=1; i<list.Count; i++) {
+				Vector2 ind1=getIndex (list [i]);
+				Debug.Log(ind1.x);
+				if((int)(ind1.x)>line1 || (int)(ind1.x)<line2)
+					return;
+			}
+		}
+		else{
+			line1=line2-1;
+			while(line2<16 && Board.matrix[(int)ind.x,line2]!=0)
+			{
+				currsc+=Board.matrix[(int)ind.x,line2];
+				line2++;
+			}
+			line2--;
+			while(line1>=0 && Board.matrix[(int)ind.x,line1]!=0)
+			{
+				currsc+=Board.matrix[(int)ind.x,line1];
+				line1--;
+			}
+			line1++;
+			for (i=1; i<list.Count; i++) {
+				Vector2 ind1=getIndex (list [i]);
+				if((int)(ind1.y)>line2 || (int)(ind1.y)<line1)
+					return;
+			}
+		}
+		accepted = true;
 	}
 }
