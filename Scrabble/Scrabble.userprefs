@@ -1,24 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chance.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sound_change.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\Chance.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\drag.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Letters.cs" Line="35" Column="26" />
-      <File FileName="Assets\Scripts\place.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\place.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\Scripts\drag.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Letters.cs" Line="35" Column="26" />
-      <File FileName="Assets\Scripts\place.cs" Line="5" Column="26" />
-      <File FileName="Assets\Scripts\Chance.cs" Line="26" Column="27" />
-      <File FileName="Assets\Scripts\Score.cs" Line="7" Column="20" />
->>>>>>> dd27dedc44d241e32c24cd6caa1a52e1f61d93ae
->>>>>>> 361ab21a2932a22cdd6a84c0eaf94a2bab1a0405
+      <File FileName="Assets\Scripts\Sound_change.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
