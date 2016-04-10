@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dict.txt">
     <Files>
       <File FileName="Assets\Scripts\HindiUnicode.cs" Line="69" Column="26" />
@@ -10,6 +11,14 @@
       <File FileName="Assets\Scripts\Letters.txt" Line="138" Column="1" />
       <File FileName="Assets\Scripts\Dict.txt" Line="9091" Column="25" />
       <File FileName="Assets\Scripts\Dictionary.txt" Line="6881" Column="14" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Board.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Chance.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\drag.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\place.cs" Line="48" Column="5" />
+      <File FileName="Assets\Scripts\Board.cs" Line="1" Column="1" />
+>>>>>>> 517f5d8af9b5a6a5a5ed4ba01c58b6553142d5bf
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
