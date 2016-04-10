@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fd0d4311e55e9ab4aafda400e52af6e7
+<<<<<<< HEAD
+timeCreated: 1460194841
+=======
+timeCreated: 1460230728
+>>>>>>> 4e570f7d9defda8d0bc993b2c030a35d4493a64a
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - dicfile: {fileID: 4900000, guid: e26ac10c09e663946a9e38793fbe4921, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\SceneChange.cs" />
+     <Compile Include="Assets\Scripts\Board.cs" />
      <Compile Include="Assets\Scripts\Chance.cs" />
+     <Compile Include="Assets\Scripts\Convert.cs" />
+     <Compile Include="Assets\Scripts\Dictionary.cs" />
+     <Compile Include="Assets\Scripts\HindiUnicode.cs" />
+     <Compile Include="Assets\Scripts\LangChng.cs" />
      <Compile Include="Assets\Scripts\Letters.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
@@ -57,6 +62,8 @@
      <Compile Include="Assets\Scripts\drag.cs" />
      <Compile Include="Assets\Scripts\intersection.cs" />
      <Compile Include="Assets\Scripts\place.cs" />
+     <None Include="Assets\Scripts\Dict.txt" />
+     <None Include="Assets\Scripts\Dictionary.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
