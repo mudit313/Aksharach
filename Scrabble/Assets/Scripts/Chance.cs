@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Chance : MonoBehaviour {
 	public static int chance,currsc;
-	public Vector3 diff;
 	public static GameObject letteronboard;
 	public static bool added=true;
 	public static bool accepted= false;
@@ -81,19 +80,15 @@ public class Chance : MonoBehaviour {
 			flag=1;
 		}
 		if ((int)ind.x < 15 && Board.matrix [(int)(ind.x) + 1, (int)ind.y] != 0)
-			;
+			flag = 1;
 		else if ((int)ind.x > 0 && Board.matrix [(int)(ind.x) - 1, (int)ind.y] != 0)
-			;
+			flag = 1;
 		else if ((int)ind.y < 15 && Board.matrix [(int)ind.x, (int)(ind.y) + 1] != 0)
-			;
+			flag = 0;
 		else if ((int)ind.y > 0 && Board.matrix [(int)ind.x, (int)(ind.y) - 1] != 0)
-			;
-		else {
-			if(!first)
-				return;
-			else if(list.Count>1)
-				return;
-		}
+			flag = 0;
+		else 
+			return;
 		Debug.Log (flag);
 		if (flag == 1) {
 			line2=line1-1;
@@ -117,25 +112,29 @@ public class Chance : MonoBehaviour {
 			}
 		}
 		else{
-			line1=line2-1;
-			while(line2<16 && Board.matrix[(int)ind.x,line2]!=0)
-			{
-				currsc+=Board.matrix[(int)ind.x,line2];
-				line2++;
-			}
-			line2--;
-			while(line1>=0 && Board.matrix[(int)ind.x,line1]!=0)
+			line1=line2+1;
+			while(line1<16 && Board.matrix[(int)ind.x,line1]!=0)
 			{
 				currsc+=Board.matrix[(int)ind.x,line1];
-				line1--;
+				line1++;
 			}
-			line1++;
+			line1--;
+			while(line2>=0 && Board.matrix[(int)ind.x,line2]!=0)
+			{
+				currsc+=Board.matrix[(int)ind.x,line2];
+				line2--;
+			}
+			line2++;
 			for (i=1; i<list.Count; i++) {
 				Vector2 ind1=getIndex (list [i]);
-				if((int)(ind1.y)>line2 || (int)(ind1.y)<line1)
+				if((int)(ind1.y)<line2 || (int)(ind1.y)>line1)
 					return;
 			}
 		}
-		accepted = true;
+		int diff = (line1 - line2) + 1;
+		Debug.Log (diff);
+		Debug.Log (list.Count);
+		if(diff>list.Count)
+			accepted = true;
 	}
 }
