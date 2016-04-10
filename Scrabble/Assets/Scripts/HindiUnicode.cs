@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class HindiUnicode : MonoBehaviour {
-	private char[] let;
+	/*private char[] let;
 	private int val;
 	// Use this for initialization
 	void Start () {
@@ -52,6 +52,34 @@ public class HindiUnicode : MonoBehaviour {
 		for (int i = 0; i<41; i++) {
 			val = (int)(let[i]);
 			Debug.Log(val);
+		}
+	}*/
+
+	public TextAsset dicfile;
+	private string whole;
+	private List<string> word;
+	public List<string> letter;
+	public Dictionary<int, string> dict;
+
+	void Start () {
+		whole = dicfile.text;
+		
+		word = new List<string>();
+		word.AddRange(whole.Split("\n"[0]) );
+		int words = word.Count;
+
+		dict = new Dictionary<int, string>();
+
+		for (int j = 0; j < words; j++) {
+			letter = new List<string> ();
+			letter.AddRange(word [j].Split(" "[0]));
+			for (int i = 0; i < letter.Count-1; i++) {
+				int c = int.Parse (letter [i]);
+				if (!dict.ContainsKey (c)){
+					dict.Add (c, letter[i]);
+					System.IO.File.AppendAllText ("D:/Git/Team11cs243/Scrabble/Assets/Scripts/Letters.txt", letter[i] + "\n");
+				}
+			}
 		}
 	}
 }
