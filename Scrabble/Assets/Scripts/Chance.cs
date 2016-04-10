@@ -23,18 +23,7 @@ public class Chance : MonoBehaviour {
 	void Update () {
 		if (!added && letteronboard != null) {
 			Vector2 ind=getIndex(letteronboard);
-			Board.matrix[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().pt;
-			//Debug.Log(Board.matrix[(int)ind.x,(int)ind.y]);
-			//Debug.Log((int)ind.x);
-			//Debug.Log((int)ind.y);
-			/*if(ind.x<15 && Board.matrix[(ind.x)+1,ind.y]==0)
-				Board.matrix[(ind.x)+1,ind.y]=-1;
-			if(ind.x>0 && Board.matrix[(ind.x)-1,ind.y]==0)
-				Board.matrix[(ind.x)-1,ind.y]=-1;
-			if(ind.y<15 && Board.matrix[ind.x,(ind.y)+1]==0)
-				Board.matrix[ind.x,(ind.y)+1]=-1;
-			if(ind.y>0 && Board.matrix[ind.x,(ind.y)-1]==0)
-				Board.matrix[ind.x+1,ind.y]=-1;*/
+			Board.matrix[(int)ind.x,(int)ind.y]+=letteronboard.GetComponentInChildren<Point>().pt;
 			added=true;
 		}
 	}
@@ -61,7 +50,7 @@ public class Chance : MonoBehaviour {
 	}
 	public void ValidCheck()
 	{
-		//Debug.Log ("checking");
+		Debug.Log ("checking");
 		int i,flag=0;
 		Vector2 ind = getIndex (list [0]);
 		int line1 = (int)ind.x;
@@ -132,9 +121,7 @@ public class Chance : MonoBehaviour {
 			}
 		}
 		int diff = (line1 - line2) + 1;
-		Debug.Log (diff);
-		Debug.Log (list.Count);
-		if(diff>list.Count)
+		if(diff>list.Count || first)
 			accepted = true;
 	}
 }

@@ -45,6 +45,6 @@ public class place : MonoBehaviour {
 			}
 		}		
 		transform.position = boardpos;
-		//Chance.added = false;
+		Chance.added = false;
 	}
 }

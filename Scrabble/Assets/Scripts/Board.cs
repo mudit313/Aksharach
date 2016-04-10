@@ -6,7 +6,8 @@ public class Board : MonoBehaviour {
 	public static Vector3 boardpos;
 	public static float sizeBoard;
 	public static float sizeTile;
-	public static int[,] matrix=new int[16,16];
+	public static int[,] matrix = new int[16, 16];
+	public static int[,] unicode = new int[16, 16];
 	// Use this for initialization
 	void Start () {
 		boardpos = new Vector3(board.transform.position.x,board.transform.position.y,0);
@@ -15,7 +16,10 @@ public class Board : MonoBehaviour {
 		for(int i=0;i<16;i++)
 		{
 			for(int j=0;j<16;j++)
+			{
 				matrix[i,j]=0;
+				unicode[i,j]=0;
+			}
 		}
 	}
 	
