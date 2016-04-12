@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\drag.cs" />
      <Compile Include="Assets\Scripts\intersection.cs" />
      <Compile Include="Assets\Scripts\place.cs" />
+     <None Include="Assets\Scripts\Letters.txt" />
      <None Include="Assets\Scripts\Dict.txt" />
      <None Include="Assets\Scripts\Dictionary.txt" />
  <Reference Include="UnityEngine.UI">
