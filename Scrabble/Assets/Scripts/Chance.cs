@@ -6,7 +6,8 @@ public class Chance : MonoBehaviour {
 	public static int chance,currsc;
 	public static GameObject letteronboard;
 	public static bool added=true;
-	public static bool accepted= false;
+	public static bool added2=true;
+	public static bool accepted=true;
 	public static bool first=true;
 	public static List<GameObject> list=new List<GameObject>();
 	// Use this for initialization
@@ -23,8 +24,18 @@ public class Chance : MonoBehaviour {
 	void Update () {
 		if (!added && letteronboard != null) {
 			Vector2 ind=getIndex(letteronboard);
+			if(Board.matrix[(int)ind.x,(int)ind.y]>0)
+			{
+				if(letteronboard.GetComponent<place>().ontop==true)
+					added2=false;
+				else
+					Recall.recall();
+			}
+			//Debug.Log(letteronboard.GetComponentInChildren<Point>().Unicode);
 			Board.matrix[(int)ind.x,(int)ind.y]+=letteronboard.GetComponentInChildren<Point>().pt;
-			Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
+			list.Add(letteronboard);
+			Debug.Log(Board.matrix[(int)ind.x,(int)ind.y]);
+			//Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
 			added=true;
 		}
 	}
@@ -32,11 +43,8 @@ public class Chance : MonoBehaviour {
 	public void OnClick(){
 		ValidCheck ();
 		if (accepted) {
-			Debug.Log("accepted");
-			for(int i=0;i<list.Count;i++)
-				list[i].GetComponent<place>().placed=true;
-
-			list.Clear();
+			Debug.Log ("accepted");
+			list.Clear ();
 			if (chance == 1) {
 				chance = 2;
 				Score.Score1 += currsc;
@@ -44,8 +52,10 @@ public class Chance : MonoBehaviour {
 				chance = 1;
 				Score.Score2 += currsc;
 			}
-			accepted=false;
-			first=false;
+			accepted = false;
+			first = false;
+		} else {
+			Recall.recall();
 		}
 		currsc = 0;
 	}
@@ -57,14 +67,14 @@ public class Chance : MonoBehaviour {
 		int line1 = (int)ind.x;
 		int line2 = (int)ind.y;
 		for (i=1; i<list.Count; i++) {
-			if((int)(getIndex (list [i]).x)!=line1)
+			if(list[i].activeSelf &&(int)(getIndex (list [i]).x)!=line1)
 				break;
 		}
 		//Debug.Log ();
 		if (i<list.Count) {
 			for(i=1;i<list.Count;i++)
 			{
-				if((int)(getIndex(list[i]).y)!=line2)
+				if(list[i].activeSelf &&(int)(getIndex(list[i]).y)!=line2)
 					return;
 			}
 			flag=1;
@@ -94,9 +104,10 @@ public class Chance : MonoBehaviour {
 				line2--;
 			}
 			line2++;
-			for (i=1; i<list.Count; i++) {
+			for (i=0; i<list.Count; i++) {
+				//if(list[i].activeSelf)
 				Vector2 ind1=getIndex (list [i]);
-				Debug.Log(ind1.x);
+				//Debug.Log(ind1.x);
 				if((int)(ind1.x)>line1 || (int)(ind1.x)<line2)
 					return;
 			}
@@ -115,7 +126,8 @@ public class Chance : MonoBehaviour {
 				line2--;
 			}
 			line2++;
-			for (i=1; i<list.Count; i++) {
+			for (i=0; i<list.Count; i++) {
+				//if(list[i].activeSelf)
 				Vector2 ind1=getIndex (list [i]);
 				if((int)(ind1.y)<line2 || (int)(ind1.y)>line1)
 					return;

@@ -1,34 +1,41 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class intersection : MonoBehaviour {
 	public GameObject x;
 	public GameObject y;
-	private bool b=false;
-	private Collider2D col;
+	public bool ismixed=false;
+	public Collider2D col;
 	//public drag z;;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "vowel") {
-			b=true;
+			other.gameObject.GetComponent<place>().ontop=true;
+			//y.GetComponent<place>().ontop=true;
+			Debug.Log ("entered");
 			col=other;
 		}
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "vowel") {
-			b=false;
+			Debug.Log("Exited");
+			other.gameObject.GetComponent<place>().ontop=false;
 		}
 	}
 	void Update()
 	{
-		if (b==true && Input.GetMouseButtonUp (0) == true) 
-		{
-			Vector3 pos = transform.position;
-			Instantiate (x, pos, Quaternion.identity);
-			col.gameObject.SetActive(false);
-			y.SetActive(false);
+		//Debug.Log (b);
+		if (Chance.added2 == false) {
+			Debug.Log ("mixed");
+			Vector3 pos = y.transform.position;
+			x = (GameObject)Instantiate (x, pos, Quaternion.identity);
+			Chance.list.Add(x);
+			col.gameObject.SetActive (false);
+			y.SetActive (false);
+			Chance.added2 = true;
+
 		}
 	}
 }

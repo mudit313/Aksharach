@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Letters.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
+     <Compile Include="Assets\Scripts\Recall.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Sound_change.cs" />
      <Compile Include="Assets\Scripts\change_obj.cs" />
