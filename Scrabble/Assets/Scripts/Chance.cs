@@ -33,8 +33,11 @@ public class Chance : MonoBehaviour {
 			}
 			//Debug.Log(letteronboard.GetComponentInChildren<Point>().Unicode);
 			Board.matrix[(int)ind.x,(int)ind.y]+=letteronboard.GetComponentInChildren<Point>().pt;
+<<<<<<< HEAD
 			list.Add(letteronboard);
 			Debug.Log(Board.matrix[(int)ind.x,(int)ind.y]);
+=======
+>>>>>>> eff7ec2f116205eedac7afbff47c0a4268aee231
 			//Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
 			added=true;
 		}
