@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dictionary.cs">
     <Files>
@@ -8,6 +9,44 @@
       <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Chance.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AI.cs" Line="18" Column="9" />
+=======
+<<<<<<< Updated upstream
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Score.cs">
+    <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Scripts\Chance.cs" Line="147" Column="58" />
+      <File FileName="Assets\Scripts\drag.cs" Line="18" Column="34" />
+      <File FileName="Assets\Scripts\place.cs" Line="56" Column="3" />
+      <File FileName="Assets\Scripts\Recall.cs" Line="25" Column="22" />
+      <File FileName="Assets\Scripts\Score.cs" Line="21" Column="45" />
+=======
+      <File FileName="Assets\Scripts\Recall.cs" Line="22" Column="24" />
+      <File FileName="Assets\Scripts\Chance.cs" Line="32" Column="8" />
+      <File FileName="Assets\Scripts\place.cs" Line="59" Column="18" />
+      <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\drag.cs" Line="20" Column="37" />
+      <File FileName="Assets\Scripts\Board.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\intersection.cs" Line="32" Column="34" />
+      <File FileName="Assets\Scripts\Point.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Letters.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\bank.cs">
+    <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Scripts\bank.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\Scripts\bank.cs" Line="7" Column="20" />
+>>>>>>> eff7ec2f116205eedac7afbff47c0a4268aee231
+>>>>>>> 7ab3e8d97b0922c1f40b8c68008d31f213875984
+>>>>>>> f22858991f0c629b94e37092a5a79eaa7d87e3cb
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\bank.cs">
+    <Files>
+      <File FileName="Assets\Scripts\bank.cs" Line="112" Column="1" />
+>>>>>>> Stashed changes
+>>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
