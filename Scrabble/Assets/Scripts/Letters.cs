@@ -4,25 +4,25 @@ using System.Collections;
 public class Letters : MonoBehaviour {
 	public GameObject[] Swar;
 	public GameObject[] Vyanjan;
-	public Object[] Swarob;
-	public Object[] Vyanjanob;
+	public static GameObject[] Swarob = new GameObject[3];
+	public static GameObject[] Vyanjanob = new GameObject[5];
 	public Transform[] Swarcurr;
 	public Transform[] Vyanjancurr;
 	public int i,temp;
+	public static bool rack = false;
 	// Use this for initialization
 	void Start () {
-		Swarob = new GameObject[3];
-		Vyanjanob = new GameObject[5];
 		for (i=0; i<3; i++) {
 			temp = Random.Range (0, 12);
-			Swarob[i] = Instantiate (Swar[temp],Swarcurr[i].position,Quaternion.identity);
+			Swarob[i] = GameObject.Instantiate (Swar[temp],Swarcurr[i].position,Quaternion.identity) as GameObject;
 			//Swarcurr[i] = Swar[temp];
 		}
 		for (i=0; i<5; i++) {
-			temp = Random.Range (0, 32);
-			Vyanjanob[i] = Instantiate (Vyanjan[temp],Vyanjancurr[i].position,Quaternion.identity);
+			temp = Random.Range (0, 30);
+			Vyanjanob[i] = GameObject.Instantiate (Vyanjan[temp],Vyanjancurr[i].position,Quaternion.identity) as GameObject;
 			//Vyanjancurr[i] = Vyanjan[temp];
 		}
+		rack = true;
 	}
 
 	public void OnClick(){
@@ -37,12 +37,12 @@ public class Letters : MonoBehaviour {
 			}
 			for (i=0; i<3; i++) {
 				temp = Random.Range (0, 12);
-				Swarob [i] = Instantiate (Swar [temp], Swarcurr [i].position, Quaternion.identity);
+				Swarob[i] = GameObject.Instantiate (Swar[temp],Swarcurr[i].position,Quaternion.identity) as GameObject;
 				//Swarcurr[i] = Swar[temp];
 			}
 			for (i=0; i<5; i++) {
-				temp = Random.Range (0, 32);
-				Vyanjanob [i] = Instantiate (Vyanjan [temp], Vyanjancurr [i].position, Quaternion.identity);
+				temp = Random.Range (0, 30);
+				Vyanjanob[i] = GameObject.Instantiate (Vyanjan[temp],Vyanjancurr[i].position,Quaternion.identity) as GameObject;
 				//Vyanjancurr[i] = Vyanjan[temp];
 			}
 		}
