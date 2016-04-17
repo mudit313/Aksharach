@@ -19,7 +19,7 @@ public class drag : MonoBehaviour {
 			}
 			else
 			{
-				gameObject.GetComponent<intersection>().
+				//gameObject.GetComponent<intersection>().
 			}
 		}
 

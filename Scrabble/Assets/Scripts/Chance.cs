@@ -24,7 +24,7 @@ public class Chance : MonoBehaviour {
 		if (!added && letteronboard != null) {
 			Vector2 ind=getIndex(letteronboard);
 			Board.matrix[(int)ind.x,(int)ind.y]+=letteronboard.GetComponentInChildren<Point>().pt;
-			Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
+			//Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
 			added=true;
 		}
 	}
