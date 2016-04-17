@@ -12,11 +12,6 @@ public class place : MonoBehaviour {
 	}
 	// Update is called once per frame 00
 	void Update () {
-		if (transform.position.y > -4.22 && !onboard) {
-			//Chance.letteronboard = gameObject;
-			//Chance.list.Add(gameObject);
-			//gameObject.GetComponent<place>().onboard = true;
-		}
 	}
 
 	void OnMouseUp()
@@ -51,10 +46,10 @@ public class place : MonoBehaviour {
 			}		
 			transform.position = boardpos;
 			Chance.letteronboard = gameObject;
-			onboard = true;
+			onboard=true;
 			Chance.added = false;
 		}
-		else {
+		else if(!onboard){
 			transform.position=initialpos;
 			onboard=false;
 		}
