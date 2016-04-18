@@ -38,11 +38,10 @@ public class Chance : MonoBehaviour {
 					return;
 				}
 			}
-			//Debug.Log(letteronboard.GetComponentInChildren<Point>().Unicode);
+			Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
 			Board.matrix[(int)ind.x,(int)ind.y]+=letteronboard.GetComponentInChildren<Point>().pt;
 			list.Add(letteronboard);
-			Debug.Log(Board.matrix[(int)ind.x,(int)ind.y]);
-			//Board.unicode[(int)ind.x,(int)ind.y]=letteronboard.GetComponentInChildren<Point>().Unicode;
+			//Debug.Log(Board.unicode[(int)ind.x,(int)ind.y]);
 			added=true;
 		}
 	}

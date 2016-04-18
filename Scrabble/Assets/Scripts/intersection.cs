@@ -32,6 +32,9 @@ public class intersection : MonoBehaviour {
 			Vector3 pos = y.transform.position;
 			x = (GameObject)Instantiate (x, pos, Quaternion.identity);
 			Chance.list.Add(x);
+			Vector2 ind=Chance.getIndex(x);
+			Board.unicode[(int)ind.x,(int)ind.y]=x.GetComponentInChildren<Point>().Unicode;
+			//Debug.Log(Board.unicode[(int)ind.x,(int)ind.y]);
 			col.gameObject.SetActive (false);
 			y.SetActive (false);
 			Chance.added2 = true;
