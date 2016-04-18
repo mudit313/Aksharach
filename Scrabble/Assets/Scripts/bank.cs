@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class bank : MonoBehaviour {
 	
-
+	
 	public List<GameObject> SwarVyanjan=new List<GameObject>();
 	
 	public GameObject[] P1curr;
@@ -51,7 +51,7 @@ public class bank : MonoBehaviour {
 			if (turn % 2 == 0) {
 				
 				for (i=0; i<8; i++) {
-
+					
 					if(P1curr[i].GetComponent<place>().onboard==true)
 					{
 						temp = Random.Range (0, bankNo);
@@ -64,7 +64,7 @@ public class bank : MonoBehaviour {
 				}
 				
 				for (i=0; i<8; i++) {
-
+					
 					if(P2curr[i].GetComponent<place>().onboard==true)
 					{
 						temp = Random.Range (0, bankNo);
@@ -106,6 +106,6 @@ public class bank : MonoBehaviour {
 			
 		}
 		
-
+		
 	}
 }
