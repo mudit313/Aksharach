@@ -14,22 +14,23 @@ public class Dictionary : MonoBehaviour {
 	private string whole;
 	private List<string> word;
 	public string search;
+	public static bool searchmaar = false;
 	public List<string> letter;
-	public List<int> query;
+	//public static List<int> query = AI.possible;
+	Node temp;
+	Node Root = new Node ();
 	
 	// Use this for initialization
 	void Start () {
 		whole = dicfile.text;
 		
-		word = new List<string>();
-		word.AddRange(whole.Split("\n"[0]) );
+		word = new List<string> ();
+		word.AddRange (whole.Split ("\n" [0]));
 		int words = word.Count;
-		Node temp;
-
-		Node Root = new Node();
+		
 		for (int j = 0; j < words; j++) {
 			letter = new List<string> ();
-			letter.AddRange(word [j].Split(" "[0]));
+			letter.AddRange (word [j].Split (" " [0]));
 			temp = Root;
 			for (int i = 0; i < letter.Count-1; i++) {
 				//Debug.Log(letter[i]);
@@ -41,34 +42,35 @@ public class Dictionary : MonoBehaviour {
 				}
 				temp = temp.dict [c];
 			}
+			//Debug.Log(j);
 		}
+	}
 
-		query = new List<int> ();
-		query.Add (2325);
+	public void Search(List<int> query){
+		//Debug.Log("searching");
+			//query = AI.possible;
+			//query = new List<int> ();
+			/*query.Add (2325);
 		query.Add (2369);
 		query.Add (2335);
 		query.Add (2344);
 		query.Add (2346);
-		query.Add (2341);
-		temp = Root;
-		for (int i = 0; i<query.Count; i++) {
-			if(temp.dict.ContainsKey (query[i]))
-			{
-				if(i == query.Count-1)
-					Debug.Log ("Machaya");
-				else
-				{
-					temp = temp.dict[query[i]];
-					//Debug.Log(query[i]);
+		query.Add (2341);*/
+			temp = Root;
+			for (int i = 0; i<query.Count; i++) {
+				if (temp.dict.ContainsKey (query [i])) {
+					if (i == query.Count - 1)
+						Debug.Log ("Machaya");
+					else {
+						temp = temp.dict [query [i]];
+						//Debug.Log(query[i]);
+					}
+				} else {
+					//Debug.Log ("Nahi Machaya");
+					//Debug.Log (query [i]);
+					break;
 				}
 			}
-			else
-			{
-				Debug.Log ("Nahi Machaya");
-				Debug.Log(query[i]);
-				break;
-			}
-		}
 		//2309 2325 2341 2344 2368 2351
 		//2325 2369 2335 2344 2346 2344
 		/*int k = int.Parse(letter[4]);

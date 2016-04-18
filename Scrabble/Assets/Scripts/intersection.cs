@@ -10,7 +10,7 @@ public class intersection : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "vowel") {
+		if (other.gameObject.tag == "vowel" && gameObject.GetComponent<place>().placed==false) {
 			other.gameObject.GetComponent<place>().ontop=true;
 			//y.GetComponent<place>().ontop=true;
 			Debug.Log ("entered");
@@ -19,7 +19,7 @@ public class intersection : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "vowel") {
+		if (other.gameObject.tag == "vowel" && gameObject.GetComponent<place>().placed==false) {
 			Debug.Log("Exited");
 			other.gameObject.GetComponent<place>().ontop=false;
 		}

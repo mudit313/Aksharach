@@ -16,14 +16,17 @@ public class Chance : MonoBehaviour {
 	}
 	public static Vector2 getIndex(GameObject g)
 	{
+
 		int x = (int)(8 + (g.transform.position.x - Board.boardpos.x) / (2 * Board.sizeTile));
 		int y = (int)(8 - (g.transform.position.y - Board.boardpos.y) / (2 * Board.sizeTile));
+		Debug.Log(x + " " + y);
 		return new Vector2 (x, y);
 	}
 
 	void Update () {
 		if (!added && letteronboard != null) {
 			Vector2 ind=getIndex(letteronboard);
+			//Debug.Log(ind.x + " " + ind.y);
 			if(Board.matrix[(int)ind.x,(int)ind.y]>0)
 			{
 				if(letteronboard.GetComponent<place>().ontop==true)
@@ -31,6 +34,7 @@ public class Chance : MonoBehaviour {
 				else{
 					letteronboard.transform.position=letteronboard.GetComponent<place>().initialpos;
 					letteronboard.GetComponent<place>().onboard=false;
+					added=true;
 					return;
 				}
 			}
@@ -44,9 +48,13 @@ public class Chance : MonoBehaviour {
 	}
 
 	public void OnClick(){
+		if (list.Count==0)
+			return;
 		ValidCheck ();
 		if (accepted) {
 			Debug.Log ("accepted");
+			for(int i=0;i<list.Count;i++)
+				list[i].GetComponent<place>().placed=true;
 			list.Clear ();
 			if (chance == 1) {
 				chance = 2;
