@@ -7,7 +7,7 @@ public class Board : MonoBehaviour {
 	public static float sizeBoard;
 	public static float sizeTile;
 	public static int[,] matrix = new int[16, 16];
-	public static int[,] unicode = new int[16, 16];
+	public static string[,] unicode = new string[16, 16];
     
     public static int[,] multiples = new int[16,16];
     public static int[,] powers = new int[16,16];
@@ -24,7 +24,7 @@ public class Board : MonoBehaviour {
 			for(j=0;j<16;j++)
 			{
 				matrix[i,j]=0;
-				unicode[i,j]=0;
+				unicode[i,j]="0";
 			}
 		}
         
