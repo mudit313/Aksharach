@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\SceneChange.cs" />
-     <Compile Include="Assets\Scripts\AI.cs" />
      <Compile Include="Assets\Scripts\Board.cs" />
      <Compile Include="Assets\Scripts\Chance.cs" />
      <Compile Include="Assets\Scripts\Convert.cs" />

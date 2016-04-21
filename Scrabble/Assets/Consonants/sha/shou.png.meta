@@ -1,22 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: e8db1fb06f7dd7e45b51dad0369b2135
-timeCreated: 1460184690
-=======
-<<<<<<< HEAD
-guid: 40bf858220bd8b541b4cefe8f0c2ffbc
-timeCreated: 1460185673
-=======
-<<<<<<< HEAD
-guid: b2f36e84d144052419fa51dd5a664eb7
-timeCreated: 1460192806
-=======
-guid: cc9a6202d9d4a054bb93bd643b33a40e
-timeCreated: 1459631603
->>>>>>> 1632992c219b569ccdd73e36d957d9178ebde171
->>>>>>> bb9b12be7b27a58e1a203b15c46ec86f18d86386
->>>>>>> 7f1e8d62fefcacb586538bf5fa8ad2aa0133dd1d
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -45,7 +28,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0

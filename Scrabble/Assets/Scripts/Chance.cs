@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Chance : MonoBehaviour {
-	public static int chance,currsc;
+	public static int chance,currsc,count;
 	public static GameObject letteronboard;
 	public static bool added=true;
 	public static bool added2=true;
@@ -13,13 +13,15 @@ public class Chance : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		chance = 1;
+		count = 0;
+		currsc = 0;
 	}
 	public static Vector2 getIndex(GameObject g)
 	{
 
 		int x = (int)(8 + (g.transform.position.x - Board.boardpos.x) / (2 * Board.sizeTile));
 		int y = (int)(8 - (g.transform.position.y - Board.boardpos.y) / (2 * Board.sizeTile));
-		Debug.Log(x + " " + y);
+		//Debug.Log(x + " " + y);
 		return new Vector2 (x, y);
 	}
 
@@ -47,8 +49,6 @@ public class Chance : MonoBehaviour {
 	}
 
 	public void OnClick(){
-		if (list.Count==0)
-			return;
 		ValidCheck ();
 		if (accepted) {
 			Debug.Log ("accepted");
@@ -62,17 +62,22 @@ public class Chance : MonoBehaviour {
 				chance = 1;
 				Score.Score2 += currsc;
 			}
-			accepted = false;
+			//accepted = false;
 			first = false;
 		} else {
 			Recall.recall();
 		}
 		currsc = 0;
+		count = 0;
 	}
 	public void ValidCheck()
 	{
 		Debug.Log ("checking");
-		int i,flag=0,count=0;
+		if (list.Count == 0) {
+			accepted=true;
+			return;
+		}
+		int i,flag=0,f=0;
 		Vector2 ind = getIndex (list [0]);
 		int line1 = (int)ind.x;
 		int line2 = (int)ind.y;
@@ -109,7 +114,7 @@ public class Chance : MonoBehaviour {
 			else 
 				return;
 		}
-		Debug.Log (flag);
+		Debug.Log ("flag= " + flag);
 		//1 for horizontal 0 for vertical
 		if (flag == 1) {
 			line2=line1-1;
@@ -129,7 +134,18 @@ public class Chance : MonoBehaviour {
 				Vector2 ind1=getIndex (list [i]);
 				if((int)(ind1.x)>line1 || (int)(ind1.x)<line2 || (int)(ind1.y)!=(int)(ind.y))
 					return;
+				if((int)(ind1.x)==line1)
+					f=0;
+				if((int)(ind1.x)==line2)
+					f=1;
 			}
+			int c=Matching.match(line2,line1,(int)(ind.y),(int)(ind.y),f);
+			if(c>0&&f==0)
+				line2=line1-c;
+			else if(c>0 && f==1)
+				line1=line2+c;
+			else
+				return;
 			currsc=Score.score(line2,line1,(int)(ind.y),(int)ind.y);
 		}
 		else{
@@ -150,7 +166,18 @@ public class Chance : MonoBehaviour {
 				Vector2 ind1=getIndex (list [i]);
 				if((int)(ind1.y)<line2 || (int)(ind1.y)>line1 || (int)(ind1.x)!=(int)(ind.x))
 					return;
+				if((int)(ind1.y)==line1)
+					f=0;
+				if((int)(ind1.y)==line2)
+					f=1;
 			}
+			int c=Matching.match((int)(ind.x),(int)ind.x,line2,line1,f);
+			if(c>0&&f==0)
+				line2=line1-c;
+			else if(c>0 && f==1)
+				line1=line2+c;
+			else
+				return;
 			currsc=Score.score((int)(ind.x),(int)ind.x,line2,line1);
 		}
 		int diff = (line1 - line2) + 1;

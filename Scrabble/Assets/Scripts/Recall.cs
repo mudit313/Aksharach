@@ -21,9 +21,10 @@ public class Recall: MonoBehaviour {
 			obj=Chance.list[i];
 			obj.SetActive(true);
 			Vector2 ind=Chance.getIndex(obj);
-			Debug.Log(ind.x);
-			Debug.Log (ind.y);
+			//Debug.Log(ind.x);
+			//Debug.Log (ind.y);
 			Board.matrix[(int)ind.x,(int)ind.y]=0;
+			Board.unicode[(int)ind.x,(int)ind.y]="0";
 			if(obj.tag=="mixed")
 				Destroy(obj);
 			else
