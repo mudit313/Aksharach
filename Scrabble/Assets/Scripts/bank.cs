@@ -8,7 +8,7 @@ public class bank : MonoBehaviour {
 	public List<GameObject> SwarVyanjan=new List<GameObject>();
 	
 	public GameObject[] P1curr;
-	public GameObject[] P2curr;
+	public static GameObject[] P2curr;
 
 	public GameObject[] P1;
 	public GameObject[] P2;
@@ -16,6 +16,7 @@ public class bank : MonoBehaviour {
 	public Transform[] SV;
 	
 	public int i,temp=0,bankNo=173;
+	public static bool done = false;
 	
 	// Use this for initialization
 	void Start () {

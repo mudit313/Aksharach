@@ -52,6 +52,7 @@ public class Dictionary : MonoBehaviour {
 
 	public static int Search(List<int> query){
 		int flag = 0;
+		//Debug.Log ("X");
 		//Debug.Log("searching");
 			//query = AI.possible;
 			//query = new List<int> ();
@@ -64,30 +65,32 @@ public class Dictionary : MonoBehaviour {
 			temp = Root;
 			for (int i = 0; i<query.Count; i++) {
 				if (temp.dict.ContainsKey (query [i])) {
-					if ((i == query.Count - 1) && temp.dict[query [i]].dict.ContainsKey(0)){
-						Debug.Log ("Machaya");
-						//print.GetComponent<AI>().printlist(query,query.Count);
-						flag = 1;
-					}
-					else if((i == query.Count - 1) && !temp.dict[query [i]].dict.ContainsKey(0)){
-						Debug.Log ("Adha Machaya");
-						flag = 0;
-					}
-					else {
-						temp = temp.dict [query [i]];
-						//Debug.Log(query[i]);
-					}
-				}else {
-					Debug.Log ("Nahi Machaya");
-					Debug.Log (query [i]);
+				if ((i == query.Count - 1) && temp.dict[query [i]].dict.ContainsKey(0)){
+					//Debug.Log ("Machaya");
+					//print.GetComponent<AI>().printlist(query,query.Count);
+					flag = 1;
+				}
+				else if((i == query.Count - 1) && !temp.dict[query [i]].dict.ContainsKey(0)){
+					//Debug.Log ("Adha Machaya");
 					flag = 0;
 				}
+				else {
+					//Debug.Log ("X");
+					temp = temp.dict [query [i]];
+					//Debug.Log(query[i]);
+					flag = 0;
+				}
+				} else {
+					//Debug.Log ("Nahi Machaya");
+					//Debug.Log (query [i]);
+					break;
+				}
 			}
-		return flag;
 		//2309 2325 2341 2344 2368 2351
 		//2325 2369 2335 2344 2346 2344
 		/*int k = int.Parse(letter[4]);
 		Debug.Log (k);*/
+		return flag;
 	}
 }
 

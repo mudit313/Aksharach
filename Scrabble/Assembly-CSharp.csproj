@@ -47,13 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\SceneChange.cs" />
+     <Compile Include="Assets\Scripts\AI.cs" />
      <Compile Include="Assets\Scripts\Board.cs" />
      <Compile Include="Assets\Scripts\Chance.cs" />
      <Compile Include="Assets\Scripts\Convert.cs" />
      <Compile Include="Assets\Scripts\Dictionary.cs" />
      <Compile Include="Assets\Scripts\HindiUnicode.cs" />
      <Compile Include="Assets\Scripts\LangChng.cs" />
-     <Compile Include="Assets\Scripts\Letters.cs" />
      <Compile Include="Assets\Scripts\Matching.cs" />
      <Compile Include="Assets\Scripts\Matrix.cs" />
      <Compile Include="Assets\Scripts\Point.cs" />
