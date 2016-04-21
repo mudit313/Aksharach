@@ -13,6 +13,7 @@ public class AI : MonoBehaviour {
 	public int valid;
 	public List<GameObject> Onrack = new List<GameObject>();
 	public string t;
+	public List<int> anchored;
 	public int x, c = 0;
 	//public List<List<int>> poswords;
 	public List<int> placethis = new List<int> ();
@@ -23,7 +24,7 @@ public class AI : MonoBehaviour {
 			c = c + 1;
 			Debug.Log (pr[i]);
 		}
-		Debug.Log ("");
+		//Debug.Log ("");
 	}
 
 	public int scorecal(List<int> pr){
@@ -53,38 +54,43 @@ public class AI : MonoBehaviour {
 		return poi;
 	}
 
-	void permute(List<int> per, int n, int l,bool d){
+	void permute(List<int> per, int n, int l,bool d, List<int> toadd, int x, int y, int z){
 		int temp;
 		if (l != n) {
 			for (int i = l; i<n; i++) {
 				temp = per [l];
 				per [l] = per [i];
 				per [i] = temp;
-				permute (per, n, l + 1, d);
-				permute (per, n, l + 1, false);
+				permute (per, n, l + 1, d, toadd,x,y,z);
+				permute (per, n, l + 1, false, toadd,x,y,z);
 				temp = per [l];
 				per [l] = per [i];
 				per [i] = temp;
 			}
 		} else {
 			if (d){
-				valid = Dictionary.Search(per);
+				List<int> tosearch = new List<int>(toadd);
+				for(int i=0;i<per.Count;i++){
+					tosearch.Add (per[i]);
+				}
+				valid = Dictionary.Search(tosearch);
 				if(valid == 1){
 					int p = scorecal(per);
+					for(int i=1;i<=z;i++){
+						p += Board.matrix[x-z,y];
+					}
+					tosearch.Add(p);
 					per.Add(p);
-					printlist(per,per.Count);
+					printlist(tosearch,tosearch.Count);
 					if(placethis[placethis.Count-1] < p){
 						placethis.Clear();
-					//Debug.Log(placethis[placethis.Count-1] + " < " + p);
-						//placethis = per;
 						for(int i=0;i<per.Count;i++){
 							placethis.Add (per[i]);
 						}
+						plachere.transform.position = new Vector3(plachere.position.x + (x * (2 * Board.sizeTile)), plachere.position.y - (y * (2 * Board.sizeTile)), 0);
 					}
+					//printlist(tosearch,tosearch.Count);
 				}
-				//Dictionary.query = per;
-				//Dictionary.searchmaar = true;
-				//printlist (per, n);
 			}
 		}
 	}
@@ -127,15 +133,25 @@ public class AI : MonoBehaviour {
 			}
 		}
 	}
-
-	/*void Start(){
-		placethis.Add (0);
-	}*/
 	
+	void anchoring(string[,] board){
+		//int ct = 0;
+		for (int i=0; i<16; i++) {
+			for (int j=0;j<16;j++){
+				if(int.Parse(board[i,j]) > 1000 && board[i+1,j] == "0"){
+					//ct++;
+					board[i+1,j] = "1";
+				}
+			}
+		}
+		//Debug.Log (ct);
+	}
+
 	void Update() {
 		if(Chance.chance == 2){
 			placethis.Clear();
 			placethis.Add (0);
+			anchored = new List<int> ();
 			possible = new List<int> ();
 			Onrack = new List<GameObject>();
 			//poswords = new List<List<int>> ();
@@ -145,7 +161,7 @@ public class AI : MonoBehaviour {
 			words = "5";
 			for(int i=0;i<8;i++){
 				words = words + " " + Onrack[i].GetComponentInChildren<Point>().Unicode;
-				Debug.Log(words);
+				//Debug.Log(words);
 			}
 			wor = new List<string> ();
 			possible = new List<int> ();
@@ -161,34 +177,40 @@ public class AI : MonoBehaviour {
 					possible.RemoveAt(i-1);
 			}
 
-		for (int j = 0; j<256; j++) {
-				searchmaar = new List<int>();
-				x = j;
-				for (int i=0; i<8; i++) {
-				//Debug.Log (x % 2);
-					if(x%2 == 1)
-					{
-						searchmaar.Add (possible[i]);
+			anchoring(Board.unicode);
+			for(int l =0 ;l<16;l++){
+				for(int k=0;k<16;k++){
+					if(Board.unicode[l,k] == "1"){
+						//anchored.Clear();
+						for(int m=1;m<4;m++){
+							//Debug.Log(Board.unicode[l-m,k]);
+							if(int.Parse (Board.unicode[l-m,k]) > 1000){
+								anchored.Insert (0,int.Parse (Board.unicode[l-m,k]));
+								//Debug.Log("Anchored");
+								//printlist(anchored,anchored.Count);
+								for (int j = 1; j<256; j++) {
+									searchmaar = new List<int>();
+									x = j;
+									for (int i=0; i<8; i++) {
+										if(x%2 == 1)
+										{
+											searchmaar.Add (possible[i]);
+										}
+										x = x / 2;
+									}
+									if(searchmaar.Count < 5)
+										permute(searchmaar,searchmaar.Count,0,true,anchored,l,k,m);
+								}
+							}
+							else
+								break;
+						}
 					}
-					x = x / 2;
 				}
-				permute(searchmaar,searchmaar.Count,0,true);
 			}
-			//placethis = best (poswords);
-			Debug.Log("This should go on board");
-			printlist(placethis,placethis.Count);
+			//Debug.Log("This should go on board");
+			//printlist(placethis,placethis.Count);
 			placekar(placethis);
-			//poswords.Clear();
-			/*List<int> p = new List<int>();
-			p.Add (2327);
-			p.Add (2325);
-			//p.Add (2305);
-			//p.Add (2335);
-			//p.Add (2344);
-			//p.Add (2360);
-			Dict.GetComponent<Dictionary>().Search(p);*/
-			//2331 2366 2305 2335 2344 2366
-			//Debug.Log (poswords.Count);
 			Chance.chance = 1;
 		}
 	}

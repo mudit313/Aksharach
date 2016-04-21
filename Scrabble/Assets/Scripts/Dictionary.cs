@@ -10,7 +10,6 @@ public class Dictionary : MonoBehaviour {
 		//public int Index = -1;
 		public Dictionary<int, Node> dict = new Dictionary<int, Node>();
 	}
-	public GameObject print;
 	public TextAsset dicfile;
 	private string whole;
 	private List<string> word;
@@ -67,7 +66,6 @@ public class Dictionary : MonoBehaviour {
 				if (temp.dict.ContainsKey (query [i])) {
 				if ((i == query.Count - 1) && temp.dict[query [i]].dict.ContainsKey(0)){
 					//Debug.Log ("Machaya");
-					//print.GetComponent<AI>().printlist(query,query.Count);
 					flag = 1;
 				}
 				else if((i == query.Count - 1) && !temp.dict[query [i]].dict.ContainsKey(0)){
