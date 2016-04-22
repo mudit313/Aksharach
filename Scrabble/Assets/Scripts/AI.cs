@@ -71,13 +71,13 @@ public class AI : MonoBehaviour {
 		} else {
 			if (d){
 				List<int> tosearch = new List<int>();
-				if(dir == 1){
+				if(dir == 1 || dir == 3){
 					tosearch = new List<int>(toadd);
 					for(int i=0;i<per.Count;i++){
 						tosearch.Add (per[i]);
 					}
 				}
-				else if(dir == 2){
+				else if(dir == 2 || dir == 4){
 					tosearch = new List<int>(per);
 					for(int i=0;i<toadd.Count;i++){
 						tosearch.Add (toadd[i]);
@@ -94,6 +94,16 @@ public class AI : MonoBehaviour {
 					else if(dir == 2){
 						for(int i=1;i<=z;i++){
 							p += Board.matrix[x+i,y];
+						}
+					}
+					else if(dir == 3){
+						for(int i=1;i<=z;i++){
+							p += Board.matrix[x,y-i];
+						}
+					}
+					else if(dir == 4){
+						for(int i=1;i<=z;i++){
+							p += Board.matrix[x,y+i];
 						}
 					}
 					tosearch.Add(p);
@@ -114,7 +124,7 @@ public class AI : MonoBehaviour {
 		}
 	}
 
-	void placekar(List<int> placekrna){
+	void placekar(List<int> placekrna, int dir){
 		int blocks = 0;
 		for (int i=0; i<placekrna.Count-1; i++) {
 			for(int j = 0; j<Onrack.Count; j++){
@@ -123,7 +133,10 @@ public class AI : MonoBehaviour {
 						if(placekrna[i]<2325 && i!=0){
 							blocks--;
 						}
-						Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						if(dir == 1 || dir == 2)
+							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						else if(dir == 3 || dir == 4)
+							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -133,7 +146,10 @@ public class AI : MonoBehaviour {
 					if(placekrna[i] == 2306){
 						if(i!=0)
 							blocks--;
-						Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						if(dir == 1 || dir == 2)
+							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						else if(dir == 3 || dir == 4)
+							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -143,7 +159,10 @@ public class AI : MonoBehaviour {
 					if(placekrna[i] == 2307){
 						if(i!=0)
 							blocks--;
-						Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						if(dir == 1 || dir == 2)
+							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
+						else if(dir == 3 || dir == 4)
+							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -173,9 +192,29 @@ public class AI : MonoBehaviour {
 		}
 	}
 
+	void anchoringdown(string[,] board){
+		for (int i=0; i<16; i++) {
+			for (int j=0;j<15;j++){
+				if(int.Parse(board[i,j]) > 1000 && int.Parse(board[i,j+1]) < 1000){
+					board[i,j+1] = "3";
+				}
+			}
+		}
+	}
+
+	void anchoringup(string[,] board){
+		for (int i=0; i<16; i++) {
+			for (int j=1;j<16;j++){
+				if(int.Parse(board[i,j]) > 1000 && int.Parse(board[i,j-1]) < 1000){
+					board[i,j-1] = "4";
+				}
+			}
+		}
+	}
+
 	void Update() {
 		if(Chance.chance == 2){
-			templachere = plachere;
+			templachere.position = plachere.position;
 			placethis.Clear();
 			placethis.Add (0);
 			anchored = new List<int> ();
@@ -234,7 +273,7 @@ public class AI : MonoBehaviour {
 						}
 					}
 				}
-			}/**/
+			}
 			
 			anchoringleft(Board.unicode);
 			for(int l =0 ;l<16;l++){
@@ -268,13 +307,77 @@ public class AI : MonoBehaviour {
 				}
 			}
 
+			anchoringdown(Board.unicode);
+			for(int l =0 ;l<16;l++){
+				for(int k=0;k<16;k++){
+					if(Board.unicode[l,k] == "3"){
+						anchored.Clear();
+						for(int m=1;m<4;m++){
+							//Debug.Log(Board.unicode[l-m,k]);
+							if(int.Parse (Board.unicode[l,k-m]) > 1000){
+								anchored.Add (int.Parse (Board.unicode[l,k-m]));
+								//Debug.Log("Anchored");
+								//printlist(anchored,anchored.Count);
+								for (int j = 1; j<256; j++) {
+									searchmaar = new List<int>();
+									x = j;
+									for (int i=0; i<8; i++) {
+										if(x%2 == 1)
+										{
+											searchmaar.Add (possible[i]);
+										}
+										x = x / 2;
+									}
+									if(searchmaar.Count < 5)
+										permute(searchmaar,searchmaar.Count,0,true,anchored,l,k,m,3);
+								}
+							}
+							else
+								break;
+						}
+					}
+				}
+			}/**/
+
+			anchoringup(Board.unicode);
+			for(int l =0 ;l<16;l++){
+				for(int k=1;k<16;k++){
+					if(Board.unicode[l,k] == "4"){
+						anchored.Clear();
+						for(int m=1;m<4;m++){
+							//Debug.Log(Board.unicode[l-m,k]);
+							if(int.Parse (Board.unicode[l,k+m]) > 1000){
+								anchored.Add (int.Parse (Board.unicode[l,k+m]));
+								//Debug.Log("Anchored");
+								//printlist(anchored,anchored.Count);
+								for (int j = 1; j<256; j++) {
+									searchmaar = new List<int>();
+									x = j;
+									for (int i=0; i<8; i++) {
+										if(x%2 == 1)
+										{
+											searchmaar.Add (possible[i]);
+										}
+										x = x / 2;
+									}
+									if(searchmaar.Count < 5)
+										permute(searchmaar,searchmaar.Count,0,true,anchored,l,k,m,4);
+								}
+							}
+							else
+								break;
+						}
+					}
+				}
+			}
+
 			templachere.transform.position = new Vector3(plachere.position.x + (anx * (2 * Board.sizeTile)), plachere.position.y - (any * (2 * Board.sizeTile)), 0);
-			if(placedir == 2){
+			if(placedir == 2 || placedir == 2){
 				templachere.position = new Vector3(templachere.position.x - ((placethis.Count-2) * (2 * Board.sizeTile)),templachere.position.y,0);
 			}
 			//Debug.Log("This should go on board");
 			//printlist(placethis,placethis.Count);
-			placekar(placethis);
+			placekar(placethis,placedir);
 			Chance.chance = 1;
 		}
 	}
