@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AI.cs">
     <Files>
-      <File FileName="Assets\Scripts\AI.cs" Line="246" Column="4" />
-      <File FileName="Assets\Scripts\Dict.txt" Line="17549" Column="10" />
+      <File FileName="Assets\Scripts\AI.cs" Line="423" Column="46" />
+      <File FileName="Assets\Scripts\Dict.txt" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Chance.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\bank.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -13,6 +13,7 @@ public class AI : MonoBehaviour {
 	public int valid;
 	public List<GameObject> Onrack = new List<GameObject>();
 	public string t;
+	public GameObject Chancescript,bankscript;
 	public List<int> anchored;
 	public int anx,any;
 	public int x, c = 0;
@@ -26,6 +27,17 @@ public class AI : MonoBehaviour {
 			Debug.Log (pr[i]);
 		}
 		//Debug.Log ("");
+	}
+
+	public void printmatrix(string[,] board){
+		string row;
+		for (int i=0; i<16; i++) {
+			row = "";
+			for(int j=0;j<16;j++){
+				row += board[i,j];
+			}
+			Debug.Log(row);
+		}
 	}
 
 	public int scorecal(List<int> pr){
@@ -133,10 +145,18 @@ public class AI : MonoBehaviour {
 						if(placekrna[i]<2325 && i!=0){
 							blocks--;
 						}
-						if(dir == 1 || dir == 2)
+						if(dir == 1 || dir == 2){
 							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
-						else if(dir == 3 || dir == 4)
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
+						else if(dir == 3 || dir == 4){
 							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx,any+blocks] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx,any + blocks] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -146,10 +166,18 @@ public class AI : MonoBehaviour {
 					if(placekrna[i] == 2306){
 						if(i!=0)
 							blocks--;
-						if(dir == 1 || dir == 2)
+						if(dir == 1 || dir == 2){
 							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
-						else if(dir == 3 || dir == 4)
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
+						else if(dir == 3 || dir == 4){
 							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx,any+blocks] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx,any+blocks] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -159,10 +187,18 @@ public class AI : MonoBehaviour {
 					if(placekrna[i] == 2307){
 						if(i!=0)
 							blocks--;
-						if(dir == 1 || dir == 2)
+						if(dir == 1 || dir == 2){
 							Onrack[j].transform.position = new Vector3(templachere.position.x + (blocks * (2 * Board.sizeTile)), templachere.position.y, 0);
-						else if(dir == 3 || dir == 4)
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx + blocks,any] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
+						else if(dir == 3 || dir == 4){
 							Onrack[j].transform.position = new Vector3(templachere.position.x, templachere.position.y - (blocks * (2 * Board.sizeTile)), 0);
+							Onrack[j].GetComponent<place>().onboard = true;
+							Board.unicode[anx,any+blocks] = Onrack[j].GetComponentInChildren<Point>().Unicode;
+							Board.matrix[anx,any+blocks] = Onrack[j].GetComponentInChildren<Point>().pt;
+						}
 						blocks++;
 						Onrack.RemoveAt(j);
 						break;
@@ -242,6 +278,8 @@ public class AI : MonoBehaviour {
 				if(possible[i-1] == 2309 && possible[i] == 2307)
 					possible.RemoveAt(i-1);
 			}
+
+			//printmatrix(Board.unicode);
 
 			anchoringright(Board.unicode);
 			for(int l =0 ;l<16;l++){
@@ -372,13 +410,17 @@ public class AI : MonoBehaviour {
 			}
 
 			templachere.transform.position = new Vector3(plachere.position.x + (anx * (2 * Board.sizeTile)), plachere.position.y - (any * (2 * Board.sizeTile)), 0);
-			if(placedir == 2 || placedir == 2){
+			if(placedir == 2){
 				templachere.position = new Vector3(templachere.position.x - ((placethis.Count-2) * (2 * Board.sizeTile)),templachere.position.y,0);
 			}
-			//Debug.Log("This should go on board");
-			//printlist(placethis,placethis.Count);
+			else if(placedir == 4){
+				templachere.position = new Vector3(templachere.position.x,templachere.position.y + ((placethis.Count-2) * (2 * Board.sizeTile)),0);
+			}
 			placekar(placethis,placedir);
-			Chance.chance = 1;
+			Score.Score2 += placethis[placethis.Count-1];
+			Chance.accepted = true;
+			Chancescript.GetComponent<Chance>().OnClick();
+			bankscript.GetComponent<bank>().OnClick();
 		}
 	}
 }
