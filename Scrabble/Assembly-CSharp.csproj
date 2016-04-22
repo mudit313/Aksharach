@@ -54,11 +54,8 @@
      <Compile Include="Assets\Scripts\Dictionary.cs" />
      <Compile Include="Assets\Scripts\HindiUnicode.cs" />
      <Compile Include="Assets\Scripts\LangChng.cs" />
-<<<<<<< HEAD
-     <Compile Include="Assets\Scripts\Letters.cs" />
+     <Compile Include="Assets\Scripts\Matching.cs" />
      <Compile Include="Assets\Scripts\Matrix.cs" />
-=======
->>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
      <Compile Include="Assets\Scripts\Point.cs" />
      <Compile Include="Assets\Scripts\Quit.cs" />
      <Compile Include="Assets\Scripts\Recall.cs" />

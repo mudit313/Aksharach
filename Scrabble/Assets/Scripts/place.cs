@@ -4,6 +4,7 @@ using System.Collections;
 public class place : MonoBehaviour {
 
 	public bool onboard = false;
+	public bool placed= false;
 	public bool ontop= false;
 	public Vector3 initialpos;
 	void Start()

@@ -7,22 +7,28 @@ public class Board : MonoBehaviour {
 	public static float sizeBoard;
 	public static float sizeTile;
 	public static int[,] matrix = new int[16, 16];
-	public static int[,] unicode = new int[16, 16];
+	public static string[,] unicode = new string[16, 16];
     
     public static int[,] multiples = new int[16,16];
+    public static int[,] powers = new int[16,16];
 	// Use this for initialization
 	void Start () {
 		boardpos = new Vector3(board.transform.position.x,board.transform.position.y,0);
 		sizeBoard = (float)(boardpos.y+4.21);
 		sizeTile = sizeBoard/16;
-		for(int i=0;i<16;i++)
+        
+        int i,j;
+        
+		for(i=0;i<16;i++)
 		{
-			for(int j=0;j<16;j++)
+			for(j=0;j<16;j++)
 			{
 				matrix[i,j]=0;
-				unicode[i,j]=0;
+				unicode[i,j]="0";
 			}
 		}
+        
+        //Letter bonus matrix
         
         for(i=0;i<16;i++)
         {
@@ -82,6 +88,40 @@ public class Board : MonoBehaviour {
         multiples[6,9]=2;
         multiples[9,6]=2;
         multiples[9,9]=2;
+        
+        //Word bonus matrix
+        
+        for(i=0;i<16;i++)
+        {
+            for(j=0;j<16;j++)
+            {
+                powers[i,j]=1;
+            }
+        }
+        
+        powers[1,1]=2;
+        powers[2,2]=2;
+        powers[3,3]=2;
+        powers[4,4]=2;
+        powers[11,11]=2;
+        powers[12,12]=2;
+        powers[13,13]=2;
+        powers[14,14]=2;
+        
+        powers[14,1]=2;
+        powers[13,2]=2;
+        powers[12,3]=2;
+        powers[11,4]=2;
+        powers[4,11]=2;
+        powers[3,12]=2;
+        powers[2,13]=2;
+        powers[1,14]=2;
+        
+        powers[0,0]=3;
+        powers[0,15]=3;
+        powers[15,0]=3;
+        powers[15,15]=3;
+        
     }
     
 	

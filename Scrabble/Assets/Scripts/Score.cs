@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -21,10 +21,20 @@ public class Score : MonoBehaviour {
 		Debug.Log (l+ " " + r + " " + u + " " + d);
 		if (l == r) {
 			for (int i=u; i<=d; i++)
-				sc += Board.matrix [l, i];
+				sc += (Board.matrix [l, i]*Board.multiples[l,i]);
+			for (int i=u; i<=d; i++)
+			{
+				if(Board.powers[l,i]!=1)
+					sc*=Board.powers[l,i];
+			}
 		} else {
 			for(int i=l;i<=r;i++)
-				sc+=Board.matrix[i,u];
+				sc+=(Board.matrix [i,u]*Board.multiples[i,u]);
+			for (int i=l;i<=r;i++)
+			{
+				if(Board.powers[i,u]!=1)
+					sc*=Board.powers[i,u];
+			}
 		}
 		Debug.Log (sc);
 		return sc;

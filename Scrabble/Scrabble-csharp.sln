@@ -17,38 +17,24 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-<<<<<<< HEAD
+																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< Updated upstream
+																																																														GlobalSection(MonoDevelopProperties) = preSolution
+=======
 																																																																			GlobalSection(MonoDevelopProperties) = preSolution
-=======
-<<<<<<< Updated upstream
-																																																GlobalSection(MonoDevelopProperties) = preSolution
-=======
-<<<<<<< Updated upstream
-																																																															GlobalSection(MonoDevelopProperties) = preSolution
-=======
-<<<<<<< HEAD
-																																																							GlobalSection(MonoDevelopProperties) = preSolution
-=======
-																																																																				GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Stashed changes
 =======
 <<<<<<< HEAD
 																																																											GlobalSection(MonoDevelopProperties) = preSolution
 =======
-<<<<<<< Updated upstream
-																																																								GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> f22858991f0c629b94e37092a5a79eaa7d87e3cb
-=======
 																																																							GlobalSection(MonoDevelopProperties) = preSolution
->>>>>>> Stashed changes
 >>>>>>> eff7ec2f116205eedac7afbff47c0a4268aee231
 >>>>>>> 7ab3e8d97b0922c1f40b8c68008d31f213875984
->>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
 =======
 <<<<<<< HEAD
-<<<<<<< HEAD
-=======
 																																																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
 =======
 <<<<<<< Updated upstream
 																																																GlobalSection(MonoDevelopProperties) = preSolution
@@ -56,7 +42,6 @@ Global
 =======
 <<<<<<< Updated upstream
 <<<<<<< HEAD
->>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
 <<<<<<< Updated upstream
 																																								GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> b5c6a6036eb8655ed4dc41a27d18fea3c93a69aa
