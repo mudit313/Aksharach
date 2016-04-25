@@ -12,10 +12,9 @@ public class bank : MonoBehaviour {
 
 	public GameObject[] P1;
 	public GameObject[] P2;
-	
 	public Transform[] SV;
 	
-	public int i,temp=0,bankNo=173;
+	public int i,temp=0,bankNo=179;
 	public static bool done = false;
 	
 	// Use this for initialization
