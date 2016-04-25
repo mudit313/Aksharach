@@ -8,14 +8,21 @@ public class intersection : MonoBehaviour {
 	public Collider2D col;
 	//public drag z;;
 
+	public GameObject[] arr;
+	void Start()
+	{
+		arr = new GameObject[19];
+	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "vowel" && gameObject.GetComponent<place>().placed==false) {
-			other.gameObject.GetComponent<place>().ontop=true;
-			//y.GetComponent<place>().ontop=true;
-			Debug.Log ("entered");
-			col=other;
+		string s = other.gameObject.GetComponentInChildren<Point> ().Unicode;
+		int a = int.Parse(s.Substring(s.Length-2));
+		
+		while(a>=06 && a<=24 && arr[a-06]!=null) {
+			
+			x = arr[a-06];
 		}
+
 	}
 	void OnTriggerExit2D(Collider2D other)
 	{
