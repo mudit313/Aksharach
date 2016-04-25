@@ -1,0 +1,141 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{77933845-ADF8-3758-A686-A08EA46F015E}") = "Scrabble", "Assembly-CSharp.csproj", "{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE459F42-90F0-10CB-4F2B-9FDB4DD60944}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< Updated upstream
+																																																														GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																																			GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+																																																											GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																																							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> eff7ec2f116205eedac7afbff47c0a4268aee231
+>>>>>>> 7ab3e8d97b0922c1f40b8c68008d31f213875984
+=======
+<<<<<<< HEAD
+																																																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 87aca64ce6d1e410043e321a4aebc75f1ab0d798
+=======
+<<<<<<< Updated upstream
+																																																GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> f38410efd1f1b0011dc13cecab668fbede763312
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+																																								GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> b5c6a6036eb8655ed4dc41a27d18fea3c93a69aa
+=======
+<<<<<<< HEAD
+																																														GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 517f5d8af9b5a6a5a5ed4ba01c58b6553142d5bf
+=======
+																																																	GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+																																																																GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																													GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 27c166f62b4fe2b6932b03f18ac059b103707124
+=======
+<<<<<<< HEAD
+																																																														GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 4e570f7d9defda8d0bc993b2c030a35d4493a64a
+=======
+																																												GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
+																																							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 1632992c219b569ccdd73e36d957d9178ebde171
+>>>>>>> bb9b12be7b27a58e1a203b15c46ec86f18d86386
+>>>>>>> 7f1e8d62fefcacb586538bf5fa8ad2aa0133dd1d
+=======
+<<<<<<< HEAD
+																															GlobalSection(MonoDevelopProperties) = preSolution
+=======
+																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																																				GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 361ab21a2932a22cdd6a84c0eaf94a2bab1a0405
+>>>>>>> 4ca3ad1a26dc6c5446723f956f56e5a8c7850371
+=======
+																																					GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																																					GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> e353cb321503824eabf77308b1a85bf80905792a
+>>>>>>> dd27dedc44d241e32c24cd6caa1a52e1f61d93ae
+=======
+																							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																								GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																						GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+<<<<<<< HEAD
+									GlobalSection(MonoDevelopProperties) = preSolution
+=======
+													GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> f326ad24b7448f8fbe4d9a413bb4c9e3c31f8f5e
+=======
+	GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> b0c8ddcc9b14a01c93504fee60850f966b8a9634
+=======
+<<<<<<< HEAD
+										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 4e1aa8f51500fc97e9a4d948cf51ba186f6e9506
+=======
+							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> bababb58e591e33706f078a6688195b1a3f4a669
+>>>>>>> c726eec98445474454f60ef72cd0ff7f8ac87d67
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.IndentWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal
