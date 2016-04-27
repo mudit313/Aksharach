@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+//C# script to hide/show the game Objects. Used for menu implemetation.
+using UnityEngine;
 using System.Collections;
 
 public class change_obj : MonoBehaviour {

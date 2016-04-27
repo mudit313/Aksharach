@@ -1,13 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\intersection.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LangChngREV.cs">
     <Files>
+      <File FileName="Assets\Scripts\Sound_change.cs" Line="1" Column="5" />
+      <File FileName="Assets\Scripts\Board.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\AI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\bank.cs" Line="17" Column="33" />
-      <File FileName="Assets\Scripts\Dictionary.cs" Line="26" Column="4" />
+      <File FileName="Assets\Scripts\bank.cs" Line="23" Column="32" />
+      <File FileName="Assets\Scripts\Dictionary.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Matching.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Chance.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\intersection.cs" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\intersection.cs" Line="51" Column="2" />
+      <File FileName="Assets\Scripts\place.cs" Line="61" Column="1" />
+      <File FileName="Assets\Scripts\LangChng.cs" Line="106" Column="5" />
+      <File FileName="Assets\Scripts\drag.cs" Line="12" Column="3" />
+      <File FileName="Assets\Scripts\LangChngREV.cs" Line="71" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

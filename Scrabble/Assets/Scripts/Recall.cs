@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+//This c# script is used to recall letters back to rack
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class Recall: MonoBehaviour {
@@ -13,6 +14,15 @@ public class Recall: MonoBehaviour {
 	void Update () {
 	
 	}
+
+	//for making static function recall accessible on button click
+	public void staticWrapper()
+	{
+		recall ();
+	}
+
+	//Recalling letters associated with Recall button
+	//Also called when letters are wrongly placed
 	public static void recall()
 	{
 		Debug.Log ("recall");

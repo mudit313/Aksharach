@@ -1,3 +1,4 @@
+//This c# script is used to assign points and unicode to all the letters
 using UnityEngine;
 using System.Collections;
 

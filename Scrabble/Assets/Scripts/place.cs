@@ -1,12 +1,14 @@
-﻿using UnityEngine;
+//This C# script helps in placing the letters on board 
+//It is associated with all letters
+using UnityEngine;
 using System.Collections;
 
 public class place : MonoBehaviour {
 
-	public bool onboard = false;
-	public bool placed= false;
-	public bool ontop= false;
-	public Vector3 initialpos;
+	public bool onboard = false;//for letter to be onboard, intersection possible
+	public bool placed= false;//for letter to be placed, intersection not possible
+	public bool ontop= false;//intersection happening
+	public Vector3 initialpos;//position of letter on rack
 	void Start()
 	{
 		initialpos = transform.position;
@@ -15,10 +17,13 @@ public class place : MonoBehaviour {
 	void Update () {
 	}
 
+	//this function is called when the mouse button is let go after dragging
 	void OnMouseUp()
 	{
 		//Debug.Log (Chance.currsc);
 		if (transform.position.y > -4.22 && !onboard) {
+			//Calculates position of the board tile on which 
+			//letter should be placed using board size, tile size and current letter position 
 			Vector3 boardpos = Board.boardpos;
 			float sizeTile = Board.sizeTile;
 			boardpos.x += sizeTile;
@@ -48,7 +53,7 @@ public class place : MonoBehaviour {
 			transform.position = boardpos;
 			Chance.letteronboard = gameObject;
 			onboard=true;
-			Chance.added = false;
+			Chance.added = false;//triggers the update function in Chance script active
 		}
 		else if(!onboard){
 			transform.position=initialpos;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+//C# script to quit the game.
+using UnityEngine;
 using System.Collections;
 
 public class Quit : MonoBehaviour {

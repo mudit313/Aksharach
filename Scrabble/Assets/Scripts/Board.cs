@@ -1,3 +1,7 @@
+//C# script which initializes all the data that is on board during gameplay.
+//The details for double letter, triple letter, double word and triple
+//word bonus points is also stored here.
+
 using UnityEngine;
 using System.Collections;
 
@@ -11,7 +15,7 @@ public class Board : MonoBehaviour {
     
     public static int[,] multiples = new int[16,16];
     public static int[,] powers = new int[16,16];
-	// Use this for initialization
+
 	void Start () {
 		boardpos = new Vector3(board.transform.position.x,board.transform.position.y,0);
 		sizeBoard = (float)(boardpos.y+4.21);
@@ -28,7 +32,7 @@ public class Board : MonoBehaviour {
 			}
 		}
         
-        //Letter bonus matrix
+//Letter bonus matrix
         
         for(i=0;i<16;i++)
         {
@@ -37,7 +41,10 @@ public class Board : MonoBehaviour {
                 multiples[i,j]=1;
             }
         }
-        //triple letter tiles
+//triple letter tiles
+//Every word with a tile on any of these blocks is awarded
+//a triple score bonus on that particular tile
+		
         multiples[0,7]=3;
         multiples[0,8]=3;
         
@@ -55,7 +62,10 @@ public class Board : MonoBehaviour {
         multiples[10,5]=3;
         multiples[10,10]=3;
         
-        //double letter tiles
+//double letter tiles
+//Every word with a tile on any of these blocks is awarded
+//a double score bonus on that particular tile
+
         multiples[1,5]=2;
         multiples[2,6]=2;
         multiples[3,7]=2;
@@ -89,7 +99,7 @@ public class Board : MonoBehaviour {
         multiples[9,6]=2;
         multiples[9,9]=2;
         
-        //Word bonus matrix
+ //Word bonus matrix
         
         for(i=0;i<16;i++)
         {
@@ -98,7 +108,10 @@ public class Board : MonoBehaviour {
                 powers[i,j]=1;
             }
         }
-        
+
+//Every word with a tile on any of these blocks is awarded
+//a double score bonus
+
         powers[1,1]=2;
         powers[2,2]=2;
         powers[3,3]=2;
@@ -117,6 +130,9 @@ public class Board : MonoBehaviour {
         powers[2,13]=2;
         powers[1,14]=2;
         
+//Every word with a tile on any of these blocks is awarded
+//a triple score bonus
+
         powers[0,0]=3;
         powers[0,15]=3;
         powers[15,0]=3;
