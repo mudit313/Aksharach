@@ -14,9 +14,9 @@ public class show : MonoBehaviour {
 	
 	}
 	public void OnClick(){
-		if (gameObject.GetComponent<SpriteRenderer> ().sortingLayerName == "Background") 
+		if (gameObject.GetComponent<SpriteRenderer> ().sortingLayerName == "Most back") 
 			gameObject.GetComponent<SpriteRenderer> ().sortingLayerName = "Fore";
 		else if (gameObject.GetComponent<SpriteRenderer> ().sortingLayerName == "Fore") 
-			gameObject.GetComponent<SpriteRenderer> ().sortingLayerName = "Background";
+			gameObject.GetComponent<SpriteRenderer> ().sortingLayerName = "Most back";
 	}
 }

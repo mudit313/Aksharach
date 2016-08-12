@@ -52,7 +52,7 @@ public class HS : MonoBehaviour {
 
 			for(int i=0;i<5;i++)
 			{
-				for(int j=0;j<5-i;j++)
+				for(int j=0;j<5-i-1;j++)
 				{
 					if(harray[j]<harray[j+1])
 					{

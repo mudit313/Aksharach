@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class vcCPU : MonoBehaviour {
+public class vsCPU : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

@@ -12,6 +12,8 @@ public class vsPlayer : MonoBehaviour {
 	{
 		PlayerPrefs.SetInt("GameMode", 1);
 
+
+
 		// If there is no entry for isFirstTime means it is first time or if there is entry 
 		//and it is not one means it is first time
 		if (!PlayerPrefs.HasKey ("isFirstTime") || PlayerPrefs.GetInt ("isFirstTime") == 1) {
